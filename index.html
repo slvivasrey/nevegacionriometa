@@ -2,660 +2,483 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Río Meta 1940–1970</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comercio fluvial en el río Meta, 1940–1970</title>
 <meta name="description" content="La navegación y el comercio del río Meta entre 1940 y 1970, contados desde la historia de Abel Rey, navegante y comerciante de Puerto López.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&amp;family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;display=swap">
 <style>
-/* Layout: relato en una columna de lectura (~66ch) con figuras que se abren a ancho completo; barra de secciones fija arriba. */
-:root{
-  --paper:#EDF0E9; --paper-2:#E1E6DC; --ink:#1B2623; --muted:#56635D; --line:#C6CDC1;
-  --water:#2B6970; --water-soft:rgba(43,105,112,.14); --silt:#A26B1C; --silt-soft:rgba(162,107,28,.16); --grass:#58773A;
-  --f-display:"Zilla Slab", "Rockwell", Georgia, serif;
-  --f-body:"Source Serif 4", "Iowan Old Style", Georgia, serif;
-  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  --measure:66ch;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#101715; --paper-2:#18211E; --ink:#E4E9E1; --muted:#9AA69F; --line:#2D3935;
-  --water:#72B5BA; --water-soft:rgba(114,181,186,.16); --silt:#DBA24E; --silt-soft:rgba(219,162,78,.16); --grass:#9DBC70; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#101715; --paper-2:#18211E; --ink:#E4E9E1; --muted:#9AA69F; --line:#2D3935;
-  --water:#72B5BA; --water-soft:rgba(114,181,186,.16); --silt:#DBA24E; --silt-soft:rgba(219,162,78,.16); --grass:#9DBC70; color-scheme:dark}
-
+html{scroll-behavior:smooth; scroll-padding-top:60px}
+body{margin:0; background:#EDF0E9; color:#1B2623; font-family:'Courier Prime','Courier New',monospace; font-size:16px; line-height:1.62}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth; scroll-padding-top:64px}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{background:var(--paper); color:var(--ink); font-family:var(--f-body); font-size:18px; line-height:1.62; margin:0}
-body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:30; background:var(--paper)}
-a{color:var(--water); text-underline-offset:2px}
-a:focus-visible,[tabindex]:focus-visible,button:focus-visible{outline:2px solid var(--silt); outline-offset:2px}
-.wrap{padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
-.col{max-width:var(--measure); margin-inline:auto}
-.wide{max-width:1080px; margin-inline:auto}
-h1,h2,h3{font-family:var(--f-display); text-wrap:balance; line-height:1.12; margin:0}
-h2{font-size:clamp(1.9rem, 4vw, 2.6rem); font-weight:700}
-h3{font-size:1.35rem; font-weight:600}
-p{margin:0}
-.flow > * + *{margin-top:1.05em}
-.eyebrow{font-family:var(--f-mono); font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
-.mono{font-family:var(--f-mono); font-variant-numeric:tabular-nums}
-.cite{color:var(--muted); font-size:.92em}
-
-/* barra superior */
-.topbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(6px); border-bottom:1px solid var(--line)}
-.topbar .inner{display:flex; gap:20px; align-items:center; min-height:52px; overflow-x:auto; white-space:nowrap; scrollbar-width:none}
-.topbar .inner::-webkit-scrollbar{display:none}
-.topbar .brand{font-family:var(--f-display); font-weight:700; font-size:1.02rem}
-.topbar nav{display:flex; gap:18px; font-family:var(--f-mono); font-size:.78rem}
-.topbar nav a{color:var(--muted); text-decoration:none}
-.topbar nav a:hover{color:var(--ink)}
-.draft{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; border:1px solid var(--silt); color:var(--silt); padding:2px 8px; border-radius:2px; margin-left:auto}
-
-/* portada */
-.hero{padding-block:56px 40px}
-.hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center}
-.hero h1{font-size:clamp(2.6rem, 6.4vw, 4.6rem); font-weight:700; letter-spacing:-.01em}
-.hero h1 span{color:var(--water)}
-.hero .lede{font-size:1.2rem; margin-top:20px; max-width:34ch}
-.hero .byline{margin-top:22px}
-.hero figure{margin:0}
-.photo{display:block; width:100%; height:auto; filter:sepia(.15) contrast(1.02); border:1px solid var(--line)}
-figcaption{font-family:var(--f-mono); font-size:.74rem; line-height:1.5; color:var(--muted); margin-top:8px}
-@media (max-width:760px){.hero-grid{grid-template-columns:1fr}.hero{padding-block:32px 24px}}
-
-/* secciones */
-section.part{padding-block:72px 24px; border-top:1px solid var(--line)}
-.part-head{display:grid; gap:10px; margin-bottom:28px}
-.part-num{font-family:var(--f-display); color:var(--silt); font-size:1rem; font-weight:600; letter-spacing:.04em}
-.pull{font-family:var(--f-display); font-size:1.45rem; line-height:1.3; color:var(--water); border-left:3px solid var(--water); padding-left:18px; margin-block:28px}
-.quote{font-style:italic; border-left:2px solid var(--line); padding-left:16px; color:var(--ink)}
-.quote footer{font-style:normal; font-family:var(--f-mono); font-size:.74rem; color:var(--muted); margin-top:6px}
-
-/* figuras */
-.fig{margin-block:40px}
-.fig-head{display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 20px; align-items:baseline; margin-bottom:12px}
-.fig-head h3{font-size:1.15rem}
-.fig-note{font-family:var(--f-mono); font-size:.74rem; color:var(--muted); margin-top:10px; line-height:1.5}
-.chart-box{position:relative; height:320px}
-.chart-box.tall{height:460px}
-.two{display:grid; grid-template-columns:1fr 1fr; gap:36px}
-.two > *{min-width:0}
-@media (max-width:820px){.two{grid-template-columns:1fr}}
-.stat-row{display:flex; flex-wrap:wrap; gap:28px; margin-block:22px}
-.stat{min-width:0}
-.stat b{display:block; font-family:var(--f-display); font-size:2rem; line-height:1; color:var(--water)}
-.stat span{font-family:var(--f-mono); font-size:.74rem; color:var(--muted)}
-
-/* mapa */
-.mapa{position:relative; border:1px solid var(--line); background:var(--paper-2)}
-.mapa-svg{display:block; width:100%; height:auto}
-.m-bg{fill:var(--paper-2)}
-.m-ven{fill:var(--paper); stroke:var(--line); stroke-width:1}
-.m-col{fill:none; stroke:var(--muted); stroke-width:1.2; stroke-dasharray:5 4; opacity:.6}
-.m-dep{fill:none; stroke:var(--line); stroke-width:.9}
-.m-dep-meta{fill:var(--silt-soft); stroke:none}
-.m-rio{fill:none; stroke:var(--water); stroke-width:4.2; stroke-linecap:round; stroke-linejoin:round}
-.m-afl{fill:none; stroke:var(--water); stroke-width:1.6; opacity:.6}
-.m-metica{fill:none; stroke:var(--water); stroke-width:2.6; stroke-dasharray:6 4; stroke-linecap:round}
-.m-orinoco{fill:none; stroke:var(--water); stroke-width:3; opacity:.55}
-.m-lbl{font-family:var(--f-mono); font-size:13px; letter-spacing:.2em; fill:var(--muted); opacity:.8}
-.m-rio-lbl{font-family:var(--f-body); font-style:italic; font-size:19px; fill:var(--water)}
-.m-small{font-size:14px}
-.pt{cursor:pointer}
-.pt circle{fill:var(--paper); stroke:var(--ink); stroke-width:1.6}
-.pt-parada circle,.pt-base circle{fill:var(--silt); stroke:var(--paper); stroke-width:2}
-.pt-mercado circle{fill:var(--ink); stroke:var(--paper); stroke-width:2}
-.pt text{font-family:var(--f-mono); font-size:13px; fill:var(--ink); paint-order:stroke; stroke:var(--paper-2); stroke-width:4px; stroke-linejoin:round}
-.pt-base text{font-weight:500; font-size:15px}
-.pt:hover circle,.pt:focus circle,.pt.on circle{stroke:var(--water); stroke-width:3}
-.mapa-info{display:grid; grid-template-columns:1fr auto; gap:16px; padding:14px 16px; border-top:1px solid var(--line); font-size:.95rem}
-.mapa-info b{font-family:var(--f-display); font-size:1.1rem}
-.legend{display:flex; flex-wrap:wrap; gap:14px; font-family:var(--f-mono); font-size:.72rem; color:var(--muted); align-content:start}
-.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:-1px; border:1.5px solid var(--ink); background:var(--paper)}
-.legend i.l-parada{background:var(--silt); border-color:var(--silt)}
-.legend i.l-mercado{background:var(--ink)}
-.legend i.l-metica{width:18px; height:0; border:0; border-top:2.6px dashed var(--water); border-radius:0; vertical-align:3px}
-@media (max-width:640px){.mapa-info{grid-template-columns:1fr}}
-.pending{font-family:var(--f-mono); font-size:.78rem; color:var(--muted); margin-top:10px}
-.pending b{color:var(--silt); font-weight:500}
-
-/* línea de tiempo */
-.timeline{list-style:none; margin:0; padding:0; border-left:2px solid var(--water); margin-left:6px}
-.timeline li{position:relative; padding:0 0 22px 26px}
-.timeline li::before{content:""; position:absolute; left:-7px; top:9px; width:12px; height:12px; border-radius:50%; background:var(--paper); border:2px solid var(--water)}
-.timeline li.k-violencia::before{border-color:var(--silt); background:var(--silt)}
-.timeline li.k-pl::before{background:var(--water)}
-.timeline .yr{font-family:var(--f-mono); font-weight:500; font-size:.92rem; color:var(--water)}
-.timeline .tag{font-family:var(--f-mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-left:8px}
-.timeline p{font-size:1rem}
-.timeline .cite{font-size:.82rem}
-
-/* fichas de pueblos */
-.towns{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:28px; margin-top:28px}
-.town{border-top:3px solid var(--water); padding-top:12px}
-.town h3{font-size:1.2rem}
-.town .mono{font-size:.72rem; color:var(--muted)}
-.town p{font-size:.98rem; margin-top:8px}
-@media (max-width:820px){.towns{grid-template-columns:1fr}}
-
-/* Puerto López destacado */
-.feature{background:var(--paper-2); border:1px solid var(--line); padding-block:36px; margin-block:36px}
-.feature .grid{display:grid; grid-template-columns:1.15fr .85fr; gap:36px}
-.feature .grid > *{min-width:0}
-.feature figure{margin:0}
-.feature figure + figure{margin-top:20px}
-@media (max-width:820px){.feature .grid{grid-template-columns:1fr}}
-.dates{display:grid; grid-template-columns:auto 1fr; gap:6px 16px; font-size:.95rem; margin-top:16px}
-.dates dt{font-family:var(--f-mono); color:var(--water)}
-.dates dd{margin:0}
-
-/* manifiesto */
-.manifest-wrap{overflow-x:auto; border:1px solid var(--ink)}
-table.manifest{width:100%; min-width:640px; border-collapse:collapse; font-size:.95rem}
-.manifest caption{caption-side:top; text-align:left; font-family:var(--f-mono); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; padding:10px 14px; border-bottom:1px solid var(--ink); background:var(--paper-2)}
-.manifest th,.manifest td{padding:11px 14px; text-align:left; vertical-align:top; border-bottom:1px dashed var(--line)}
-.manifest thead th{font-family:var(--f-display); font-size:1.08rem; border-bottom:1px solid var(--ink)}
-.manifest thead th:nth-child(2){color:var(--water)}
-.manifest thead th:nth-child(3){color:var(--silt)}
-.manifest tbody th{font-family:var(--f-mono); font-weight:500; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); width:17%}
-.manifest tr:last-child td,.manifest tr:last-child th{border-bottom:0}
-
-/* calendario */
-.cal{overflow-x:auto}
-.cal-grid{display:grid; grid-template-columns:150px repeat(12, minmax(38px,1fr)); min-width:640px; gap:3px; font-family:var(--f-mono); font-size:.72rem}
-.cal-grid .lbl{color:var(--muted); align-self:center; padding-right:8px}
-.cal-grid .m{text-align:center; color:var(--muted); padding-bottom:4px}
-.cal-grid .c{height:34px; background:var(--paper-2); display:flex; align-items:center; justify-content:center; color:var(--ink); font-size:.66rem; text-align:center; line-height:1.15}
-.cal-grid .c.agua{background:var(--water-soft); border-bottom:3px solid var(--water)}
-.cal-grid .c.viaje{background:var(--silt-soft); border-bottom:3px solid var(--silt)}
-.cal-grid .c.compra{background:var(--ink); color:var(--paper)}
-
-/* galería */
-.strip{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px; margin-block:32px}
-.strip figure{margin:0}
-.strip img{aspect-ratio:3/2; object-fit:cover}
-@media (max-width:700px){.strip{grid-template-columns:1fr}}
-
-/* fuentes */
-.sources{display:grid; gap:20px}
-.src-table-wrap{overflow-x:auto}
-table.src{width:100%; min-width:680px; border-collapse:collapse; font-size:.9rem}
-.src th,.src td{padding:9px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top}
-.src thead th{font-family:var(--f-mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:500}
-.src td:first-child{font-weight:600}
-.todo{list-style:none; padding:0; margin:0; display:grid; gap:10px}
-.todo li{padding-left:28px; position:relative}
-.todo li::before{content:""; position:absolute; left:0; top:.45em; width:14px; height:14px; border:1.5px solid var(--silt)}
-.biblio{font-size:.92rem; display:grid; gap:8px; padding-left:0; list-style:none}
-.biblio li{padding-left:2em; text-indent:-2em}
-footer.end{padding-block:48px; border-top:1px solid var(--line); margin-top:48px; color:var(--muted); font-size:.9rem}
+img{max-width:100%}
+h1,h2,h3{font-weight:400 !important; letter-spacing:-0.01em; text-wrap:balance}
+a{color:#2B6970} a:hover{color:#1B2623}
+.barra{position:sticky; top:0; z-index:20; background:#EDF0E9}
+.aparece{animation:aparece 1.1s ease .25s both}
+@keyframes aparece{from{opacity:0; transform:translateY(36px)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion: reduce){.aparece{animation:none} html{scroll-behavior:auto}}
+.hs{position:absolute; width:18px; height:18px; margin:-9px 0 0 -9px; padding:0; border-radius:50%; cursor:pointer; border:2.5px solid #A26B1C; background:rgba(162,107,28,.35); box-shadow:0 0 0 2px rgba(255,255,255,.85); transition:transform .15s}
+.hs-base{width:24px; height:24px; margin:-12px 0 0 -12px}
+.hs-puerto{border-color:#2B6970; background:rgba(43,105,112,.15)}
+.hs-mercado{border-color:#1B2623; background:rgba(27,38,35,.25)}
+.hs.on,.hs:hover,.hs:focus-visible{transform:scale(1.3); background:#A26B1C}
+.hs-puerto.on,.hs-puerto:hover,.hs-puerto:focus-visible{background:#2B6970}
+.hs-mercado.on,.hs-mercado:hover,.hs-mercado:focus-visible{background:#1B2623}
+@media (max-width:760px){
+  h1{font-size:36px !important}
+  h2{font-size:30px !important}
+  [style*="repeat(2, minmax(0, 1fr))"],[style*="repeat(3, minmax(0, 1fr))"]{grid-template-columns:1fr !important}
+  .hs{width:14px; height:14px; margin:-7px 0 0 -7px}
+  section[style*="position: relative"] img{height:420px !important}
+}
 </style>
 </head>
 <body>
-
-
-<header class="topbar wrap">
-  <div class="inner wide">
-    <span class="brand">Río Meta 1940–1970</span>
-    <nav aria-label="Secciones">
-      <a href="#rio">I. El río</a>
-      <a href="#pueblos">II. Pueblos navegantes</a>
-      <a href="#navegacion">III. La navegación</a>
-      <a href="#fuentes">Fuentes y datos</a>
-    </nav>
-    <span class="draft">Borrador · avance</span>
-  </div>
+<header class="barra" style="border-bottom: 1px solid #C6CDC1; padding: 0 24px">
+<nav style="max-width: 1080px; margin: 0 auto; min-height: 52px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 13px">
+<a href="#inicio" style="font-family: 'Cutive Mono', 'Courier New', monospace; font-weight: 700; font-size: 17px; color: #1B2623; text-decoration: none">Comercio Fluvial Río Meta 1940–1970</a>
+<a href="#rio" style="color: #56635D; text-decoration: none">I. El río</a>
+<a href="#pueblos" style="color: #56635D; text-decoration: none">II. Pueblos navegantes</a>
+<a href="#navegacion" style="color: #56635D; text-decoration: none">III. La navegación</a>
+<a href="#fuentes" style="color: #56635D; text-decoration: none">Fuentes y datos</a></nav>
 </header>
-
 <main>
-<section class="hero wrap">
-  <div class="wide hero-grid">
-    <div>
-      <p class="eyebrow">Historia Económica de Colombia · Historia familiar</p>
-      <h1>Por el río <span>Meta</span>, donde no llegaba la carretera</h1>
-      <p class="lede">La navegación y el comercio del río Meta entre 1940 y 1970, contados desde la historia de mi abuelo, Abel Rey, navegante y comerciante de Puerto López.</p>
-      <p class="byline eyebrow">Sarah Lucía Vivas · 2026-2</p>
-    </div>
-    <figure>
-      <img class="photo" src="img/vapor-meta-1920.jpg" alt="Fotografía antigua del vapor Meta atracado en la orilla, con personas en la cubierta y en tierra" width="452" height="263">
-      <figcaption>Vapor Meta, c. 1920. Fondo FAFO, reproducido en Ardila Luna (2018, p. 201, Imagen 32).</figcaption>
-    </figure>
-  </div>
+<section id="inicio">
+
+
+<figure style="margin: 0; padding: 40px 24px 0">
+<img src="img/camilo-rey-rio-meta.jpg" alt="Lancha con bandera de Colombia navegando el río Meta bajo un cielo nublado, con la sabana al fondo" style="display: block; width: 100%; max-width: 960px; height: auto; margin: 0 auto">
+<figcaption style="max-width: 960px; margin: 8px auto 0; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">El río Meta. Foto: Camilo Rey.</figcaption>
+</figure>
+
+<section style="padding: 40px 24px 56px">
+<div class="aparece" style="max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #56635D">Historia Económica de Colombia · Historia familiar</p>
+<h1 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 54px; font-weight: 700; line-height: 1.08; letter-spacing: -0.01em; max-width: 22ch">El comercio fluvial formal e informal en la Orinoquía a través del río Meta, 1940 a 1970: estructura, dinámicas y desarrollo</h1>
+<p style="margin: 0; font-size: 22px; line-height: 1.5; max-width: 46ch; color: #2B3A36">La navegación y el comercio del río Meta entre 1940 y 1970, contados desde la historia de Abel Rey, mi abuelo, navegante y comerciante de Puerto López.</p>
+<p style="margin: 0; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #56635D">Sarah Lucía Vivas · 2026-2</p>
+</div>
 </section>
 
-<section class="wrap" aria-labelledby="abel">
-  <div class="col flow">
-    <h2 id="abel" style="font-size:1.6rem">Abel Rey y el río</h2>
-    <p>Abel Rey (1931–2022) pasó su juventud y su vida adulta navegando el río Meta. No venía de una familia de navegantes. Sus padres y abuelos habían llegado a los Llanos desplazados por la violencia bipartidista, por ser liberales, y se asentaron en un caserío cerca de Villavicencio que su padre, también Abel Rey, y Clemente Naranjo llamaron Puerto López en honor al presidente Alfonso López Pumarejo <span class="cite">(Alcaldía de Puerto López, 2025)</span>. Allí el hijo dejó la primaria y empezó a recorrer el río.</p>
-    <p>Cada fin de año Abel se reunía en Villavicencio con comerciantes y dueños de caseríos y haciendas. Compraba mercancía al por mayor y anotaba los encargos. En febrero cargaba el bote y salía en un viaje de unos seis meses río abajo, hasta Orocué, La Hermosa, Guachiría, el Cravo Norte, el Cravo Sur y a veces Venezuela, entregando pedidos en caseríos, resguardos indígenas y haciendas. Llevaba de todo, incluso vestidos de novia y ataúdes <span class="cite">(Flor Alba Garzón, comunicación personal, 20 de septiembre de 2026)</span>.</p>
-    <figure class="side-photo"><img class="photo" src="img/camilo-rey-abuela-rio.jpg" alt="Mujer mayor con gafas y blusa blanca estampada, de pie junto a una lancha techada amarrada en la orilla del río" width="1206" height="808"><figcaption>Mi abuela, Flor Alba Garzón, en el río. Su testimonio es la fuente principal de este trabajo. Foto: Camilo Rey.</figcaption></figure>
-    <p class="pull">¿Por qué, a mediados del siglo XX, un ataúd o un vestido de novia solo llegaba a un caserío del Meta si alguien lo traía por el río?</p>
-    <p>Este sitio responde esa pregunta en tres partes. La primera mira el río en el siglo XX y cómo cambiaron sus dinámicas frente a la carretera y la violencia. La segunda recorre los pueblos navegantes, empezando por Puerto López. La tercera describe la navegación misma: qué se comerciaba, quién lo hacía y cómo convivían el circuito formal del Estado, con la NAVENAL, y el circuito informal de navegantes como Abel.</p>
-  </div>
+<section style="padding: 56px 24px; border-top: 1px solid #C6CDC1">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<figure style="flex: 1 1 400px; min-width: 0; margin: 0">
+<img src="img/camilo-rey-abuela-rio.jpg" alt="Mujer mayor con gafas y blusa blanca estampada, de pie junto a una lancha techada amarrada en la orilla del río" style="display: block; width: 100%; height: auto; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Mi abuela, Flor Alba Garzón, en el río. Su testimonio es la fuente principal de este trabajo. Foto: Camilo Rey.</figcaption>
+</figure>
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 34px; font-weight: 700">Abel y el río</h2>
+<p style="margin: 0">Abel Rey (1931–2022) pasó su juventud y su vida adulta navegando el río Meta. No venía de una familia de navegantes. Sus padres y abuelos habían llegado a los Llanos desplazados por la violencia bipartidista, por ser liberales, y se asentaron en un caserío cerca de Villavicencio que su padre, también Abel Rey, y Clemente Naranjo llamaron Puerto López en honor al presidente Alfonso López Pumarejo <span style="color: #56635D; font-size: 0.92em">(Alcaldía de Puerto López, 2025)</span>. Allí el hijo dejó la primaria y empezó a recorrer el río.</p>
+<p style="margin: 0">Cada fin de año Abel se reunía en Villavicencio con comerciantes y dueños de caseríos y haciendas. Compraba mercancía al por mayor y anotaba los encargos. En febrero cargaba el bote y salía en un viaje de unos seis meses río abajo, hasta Orocué, La Hermosa, Guachiría, el Cravo Norte, el Cravo Sur y a veces Venezuela, entregando pedidos en caseríos, resguardos indígenas y haciendas. Llevaba de todo, incluso vestidos de novia y ataúdes <span style="color: #56635D; font-size: 0.92em">(Flor Alba Garzón, comunicación personal, 20 de septiembre de 2026)</span>.</p>
+</div>
+</div>
 </section>
 
-<figure class="band"><img src="img/camilo-rey-rio-meta.jpg" alt="Lancha con bandera de Colombia navegando el río Meta bajo un cielo nublado, con la sabana al fondo" width="1206" height="798"><figcaption>El río Meta. Foto: Camilo Rey.</figcaption></figure>
-
-<!-- I -->
-<section class="part wrap" id="rio" aria-labelledby="h-rio">
-  <div class="col part-head">
-    <span class="part-num">I.</span>
-    <h2 id="h-rio">El río que atraviesa la región</h2>
-  </div>
-  <div class="col flow">
-    <p>El Meta nace de la unión de varios ríos del piedemonte. El Humadea y el Guayuriba forman el Metica, que pasa frente a Puerto López, y río abajo, cerca de Cabuyaro, el Metica se une al Humea y nace el Meta, que corre hacia el nororiente hasta desembocar en el Orinoco en Puerto Carreño <span class="cite">(Ardila Luna, 2018, p. 24)</span>. Es navegable unos ocho meses al año, en la temporada de lluvias. En invierno los barcos llegaban hasta Puerto López y en verano solo hasta Cabuyaro <span class="cite">(p. 31)</span>.</p>
-    <p>Desde la Colonia, los Llanos quedaron aislados del centro del país por la cordillera y por la debilidad de las comunicaciones, y se consolidaron como llanuras ganaderas con muy poca población <span class="cite">(Safford y Palacios, 2002, pp. 39, 44)</span>. En esa región el río era la vía de integración.</p>
-  </div>
-
-  <figure class="fig wide" aria-labelledby="mapa-cap">
-    <div class="fig-head"><h3 id="mapa-cap">El río Meta, de Puerto López a Puerto Carreño</h3><span class="eyebrow">Toque un círculo para ver su nota</span></div>
-    <div class="mapa">
-      <div class="mapa-base"><img src="img/mapa-puertos-ardila.jpg" alt="Mapa de puertos sobre el río Meta, de Villavicencio y Puerto López hasta Puerto Carreño, con los afluentes, las carreteras y la frontera con Venezuela" width="1275" height="621"><button type="button" class="hs hs-mercado" style="left:9.49%;top:69.89%" data-name="Villavicencio" data-note="Mercado mayorista. Cada fin de año Abel compraba aquí la mercancía y anotaba los encargos (Flor Alba Garzón, 2026)." aria-label="Villavicencio"></button><button type="button" class="hs hs-base" style="left:21.41%;top:72.46%" data-name="Puerto López" data-note="Base de Abel Rey. Puerto sobre el río Metica, el punto navegable más alto y más cercano a Bogotá (Ardila Luna, 2018, p. 130)." aria-label="Puerto López"></button><button type="button" class="hs hs-puerto" style="left:23.29%;top:66.99%" data-name="Cabuyaro" data-note="Antiguo Puerto Barrigón. Puerto de verano, cuando el agua no alcanzaba a Puerto López (Ardila Luna, 2018, p. 31)." aria-label="Cabuyaro"></button><button type="button" class="hs hs-puerto" style="left:33.41%;top:67.15%" data-name="Puerto Gaitán" data-note="Hoy es el puerto de pasajeros del Meta. Por río desde Puerto López son entre 6 y 18 horas, según la embarcación (Ardila Luna, 2018)." aria-label="Puerto Gaitán"></button><button type="button" class="hs hs-parada" style="left:37.41%;top:47.18%" data-name="Río Cravo Sur" data-note="Afluente del Meta. Parte del recorrido de Abel según Flor Alba Garzón; falta precisar el punto exacto." aria-label="Río Cravo Sur"></button><button type="button" class="hs hs-parada" style="left:42.43%;top:53.78%" data-name="Orocué" data-note="Parada del recorrido de Abel según Flor Alba Garzón. Puerto histórico del Casanare." aria-label="Orocué"></button><button type="button" class="hs hs-puerto" style="left:49.18%;top:44.77%" data-name="Santa Rosalía" data-note="Pueblo ribereño que todavía depende del río para el mercado (Ardila Luna, 2018)." aria-label="Santa Rosalía"></button><button type="button" class="hs hs-parada" style="left:49.96%;top:5.31%" data-name="Río Cravo Norte" data-note="Parte del recorrido de Abel según Flor Alba Garzón; falta precisar el punto exacto." aria-label="Río Cravo Norte"></button><button type="button" class="hs hs-puerto" style="left:56.08%;top:34.3%" data-name="La Primavera" data-note="Pueblo ribereño del Vichada." aria-label="La Primavera"></button><button type="button" class="hs hs-puerto" style="left:69.57%;top:17.39%" data-name="Nueva Antioquia" data-note="Puesto de la Armada Nacional sobre el Meta, en la frontera con Venezuela (Ardila Luna, 2018, Mapa No. 2)." aria-label="Nueva Antioquia"></button><button type="button" class="hs hs-parada" style="left:96.39%;top:14.65%" data-name="Puerto Carreño" data-note="Desembocadura del Meta en el Orinoco y frontera con Venezuela, hasta donde a veces llegaba Abel." aria-label="Puerto Carreño"></button></div>
-      <div class="mapa-info" aria-live="polite">
-        <div id="mapa-texto"><b>Puerto López</b><br>Base de Abel Rey. Puerto sobre el río Metica, el punto navegable más alto y más cercano a Bogotá (Ardila Luna, 2018, p. 130).</div>
-        <div class="legend">
-          <span><i class="l-parada"></i>Recorrido de Abel</span>
-          <span><i class="l-puerto"></i>Otros puertos</span>
-          <span><i class="l-mercado"></i>Mercado</span>
-          
-        </div>
-      </div>
-    </div>
-    <p class="pending"><b>Por ubicar:</b> La Hermosa y Guachiría, mencionados por Flor Alba Garzón, y los puntos exactos de comercio sobre el Cravo Sur y el Cravo Norte. Los ubicaré con las próximas entrevistas y cartografía de la época.</p>
-    <p class="fig-note">Mapa base: «Mapa No. 2. Puertos sobre el río Meta», elaborado en ArcGIS por Carolina Ardila y finalizado en Illustrator por Miguel Acosta (Ardila Luna, 2018, p. 29). Las carreteras del mapa son las actuales. Capa interactiva de elaboración propia, con las paradas según la entrevista a Flor Alba Garzón (2026).</p>
-  </figure>
-
-  <div class="col flow">
-    <h3>Hitos del Meta en el siglo XX</h3>
-    <p>La navegación del Meta no avanzó en línea recta. Tuvo una caída después de la Guerra de los Mil Días y la crisis de 1929, una reactivación estatal en los años cuarenta y una competencia creciente con la carretera.</p>
-  </div>
-  <div class="col" style="margin-top:24px">
-    <ol class="timeline">
-      <li><span class="yr">1899–1902</span><span class="tag">Violencia · río</span><p>La Guerra de los Mil Días inicia la decadencia de la navegación comercial en el Meta. Llegan a los Llanos colonos liberales que buscan refugio. <span class="cite">Ardila-Luna, 2022, p. 75; Ospina Ovalle, 2021, p. 57</span></p></li>
-      <li><span class="yr">Década de 1930</span><span class="tag">Río</span><p>Tras 1929 la navegación comercial se suspende. Es el vacío que llenan navegantes independientes. <span class="cite">Ardila-Luna, 2022, p. 75; Ardila Luna, 2018, p. 109</span></p></li>
-      <li class="k-pl"><span class="yr">1935</span><span class="tag">Puerto López</span><p>Abel Rey (padre) y Clemente Naranjo bautizan el caserío como Puerto López, según la Alcaldía. <span class="cite">Alcaldía de Puerto López, 2025</span></p></li>
-      <li><span class="yr">1936</span><span class="tag">Carretera</span><p>Se abre la carretera Bogotá–Villavicencio, que según se decía solucionaría el alto costo y la escasez de alimentos. No llega a la llanura profunda. <span class="cite">Alvear Sanín, 2008, p. 318</span></p></li>
-      <li><span class="yr">1944</span><span class="tag">Estado</span><p>El gobierno de López Pumarejo crea la Compañía Nacional de Navegación, NAVENAL, para integrar las fronteras fluviales con el Caribe. <span class="cite">Ardila Luna, 2018, p. 109</span></p></li>
-      <li><span class="yr">1948</span><span class="tag">Estado · río</span><p>NAVENAL empieza a operar en el Meta con remolcadores y buques traídos de Barranquilla y adaptados en Puerto López. <span class="cite">Ardila Luna, 2018, pp. 31, 109</span></p></li>
-      <li class="k-violencia"><span class="yr">1949–1953</span><span class="tag">Violencia</span><p>Las guerrillas liberales del Llano se ubican a la orilla de los ríos navegables y se comunican en canoas con motor y lanchas de poco calado. <span class="cite">Ospina Ovalle, 2021, p. 173</span></p></li>
-      <li><span class="yr">Década de 1950</span><span class="tag">Comercio</span><p>Colonos y llaneros crean empresas privadas de navegación que llevan ganado, yuca y plátano hacia Bogotá y traen maquinaria, sal y víveres. <span class="cite">Ardila Luna, 2018, p. 109</span></p></li>
-      <li class="k-pl"><span class="yr">1955</span><span class="tag">Puerto López</span><p>Puerto López se erige como municipio. <span class="cite">Ardila Luna, 2018, p. 131, con base en Torres Torres, 1987</span></p></li>
-      <li><span class="yr">1960–1970</span><span class="tag">Comercio</span><p>Aumenta el transporte de ganado por el río. Las reses llegan a Puerto López, engordan unas semanas y siguen en camión a Bogotá. <span class="cite">Ardila Luna, 2018, p. 47</span></p></li>
-      <li><span class="yr">Década de 1970</span><span class="tag">Carretera</span><p>Todavía se busca financiación para ampliar y recuperar el tramo Villavicencio–Puerto López. <span class="cite">Alvear Sanín, 2008, p. 399</span></p></li>
-      <li><span class="yr">1984</span><span class="tag">Epílogo</span><p>NAVENAL es liquidada por problemas de presupuesto y administración. <span class="cite">Ardila Luna, 2018, p. 109</span></p></li>
-    </ol>
-  </div>
-
-  <div class="col flow" style="margin-top:28px">
-    <h3>El país se pasa a la carretera; el Llano sigue en el río</h3>
-    <p>Mientras el Meta vivía su reactivación, el resto de Colombia apostaba por las carreteras. Entre 1932 y 1948 la red nacional casi se cuadruplicó. Pero en 1947 los ríos todavía movían más de una cuarta parte de la carga del país, y el principal, el Magdalena, se recuperó de la crisis de los treinta hasta su máximo en 1956.</p>
-  </div>
-  <div class="wide two fig">
-    <figure style="margin:0">
-      <div class="fig-head"><h3>Carreteras nacionales, km</h3><span class="eyebrow">1932–1948</span></div>
-      <img class="rplot" src="img/graficos/carreteras.png" alt="" hidden onload="this.hidden=false;this.alt=this.nextElementSibling.querySelector('canvas').getAttribute('aria-label');this.nextElementSibling.hidden=true"><div class="chart-box"><canvas id="c-carreteras" aria-label="Gráfico de línea: kilómetros de carreteras nacionales, de 3.006 en 1932 a 11.607 en 1948"></canvas></div>
-      <p class="fig-note">Fuente: Alvear Sanín (2008), Tabla 35, con base en Barnhart. La línea vertical marca la apertura de la carretera Bogotá–Villavicencio (1936).</p>
-    </figure>
-    <figure style="margin:0">
-      <div class="fig-head"><h3>Carga por modo de transporte</h3><span class="eyebrow">1947, % de ton-km</span></div>
-      <img class="rplot" src="img/graficos/carga_modos_1947.png" alt="" hidden onload="this.hidden=false;this.alt=this.nextElementSibling.querySelector('canvas').getAttribute('aria-label');this.nextElementSibling.hidden=true"><div class="chart-box"><canvas id="c-modos" aria-label="Barras: carreteras 35,8%, ferrocarriles 32,5%, vías fluviales 28,5%, aerolíneas 3,2%"></canvas></div>
-      <p class="fig-note">Fuente: Alvear Sanín (2008), Tabla 38, con base en la misión Currie.</p>
-    </figure>
-  </div>
-  <figure class="fig wide">
-    <div class="fig-head"><h3>Carga transportada por el río Magdalena, toneladas</h3><span class="eyebrow">Referencia nacional · 1915–1956</span></div>
-    <img class="rplot" src="img/graficos/magdalena.png" alt="" hidden onload="this.hidden=false;this.alt=this.nextElementSibling.querySelector('canvas').getAttribute('aria-label');this.nextElementSibling.hidden=true"><div class="chart-box"><canvas id="c-magdalena" aria-label="Carga del río Magdalena: 162 mil toneladas en 1915, 961 mil en 1928, 282 mil en 1932, 2,07 millones en 1956"></canvas></div>
-    <p class="fig-note">Fuente: cifras puntuales en Alvear Sanín (2008, §56 y capítulo sobre el Magdalena). Es una serie incompleta y sirve como referencia del ciclo fluvial nacional mientras consigo cifras propias del Meta (ver «Fuentes y datos»).</p>
-  </figure>
+<section style="padding: 16px 24px 64px">
+<div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 30px; line-height: 1.28; color: #2B6970; border-left: 3px solid #2B6970; padding-left: 22px">¿Por qué, a mediados del siglo XX, un ataúd o un vestido de novia solo llegaba a un caserío del Meta si alguien lo traía por el río?</p>
+<p style="margin: 0">Este sitio responde esa pregunta en tres partes. La primera mira el río en el siglo XX y cómo evolucionaron sus dinámicas en los 30 años que mi abuelo lo recorrió: a través de las dinámicas cambiantes en el transporte, la violencia y la migración a los Llanos. La segunda recorre los pueblos navegantes, empezando por Puerto López. La tercera describe la navegación misma: qué se comerciaba, quién lo hacía y cómo convivían el circuito formal del Estado, con la NAVENAL, y el circuito informal de navegantes como Abel.</p>
+</div>
 </section>
 
-<!-- II -->
-<section class="part wrap" id="pueblos" aria-labelledby="h-pueblos">
-  <div class="col part-head">
-    <span class="part-num">II.</span>
-    <h2 id="h-pueblos">Pueblos navegantes</h2>
-  </div>
-  <div class="col flow">
-    <p>A lo largo del Meta se formó una cadena de pueblos que nacieron con el río y vivían de la pesca, la navegación y el comercio. Entre 1938 y 1964 la población del Meta se triplicó, y el crecimiento se aceleró después de 1951, en los años de la Violencia y de la colonización de la llanura.</p>
-  </div>
+<section style="position: relative; margin: 0">
+<img src="img/camilo-rey-casa-flotante.jpg" alt="Canoa flotante de lámina roja y madera amarrada bajo un puente amarillo sobre el río Metica, con botes a su lado" style="display: block; width: 100%; height: 620px; object-fit: cover">
+<div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 0 24px 40px">
+<div style="max-width: 1080px; margin: 0 auto">
+<a href="#rio" style="display: inline-flex; flex-direction: column; gap: 6px; padding: 22px 28px; background: rgba(20,30,28,0.86); color: #EDF0E9; text-decoration: none">
+<span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #DBA24E">Parte I</span>
+<span style="font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 34px; font-weight: 700; line-height: 1.1">El río que atraviesa la región →</span>
+</a>
+</div>
+</div>
+</section>
+<p style="max-width: 1080px; margin: 8px auto 48px; padding: 0 24px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">Canoa flotante y botes en el río Metica. Foto: Camilo Rey (2022).</p>
 
-  <div class="wide two fig">
-    <figure style="margin:0">
-      <div class="fig-head"><h3>Población según los censos</h3><span class="eyebrow">Habitantes</span></div>
-      <img class="rplot" src="img/graficos/poblacion_censos.png" alt="" hidden onload="this.hidden=false;this.alt=this.nextElementSibling.querySelector('canvas').getAttribute('aria-label');this.nextElementSibling.hidden=true"><div class="chart-box"><canvas id="c-poblacion" aria-label="Población del Meta: 51.674 en 1938, 67.492 en 1951 y 165.530 en 1964. Villavicencio: 24.315, 33.342 y 58.430. Puerto López: 18.054 en 1964"></canvas></div>
-      <p class="fig-note">Fuente: elaboración propia con los Censos de Población de 1938 (Tomo XVI), 1951 y 1964 (Resumen del Meta). En 1938 y 1951 Puerto López no figuraba como municipio.</p>
-    </figure>
-    <div class="flow" style="align-self:center">
-      <div class="stat-row">
-        <div class="stat"><b class="mono">2,1%</b><span>crecimiento anual del Meta, 1938–1951</span></div>
-        <div class="stat"><b class="mono">7,0%</b><span>crecimiento anual del Meta, 1951–1964</span></div>
-      </div>
-      <p>En 1964, nueve años después de volverse municipio, Puerto López ya era el segundo municipio más poblado del Meta, con 18.054 habitantes, después de Villavicencio. Ocho de cada diez vivían fuera del casco urbano, frente a dos de cada diez en Villavicencio.</p>
-      <p class="cite">Tasas calculadas como crecimiento geométrico entre las fechas censales (5 de julio de 1938, 9 de mayo de 1951 y 15 de julio de 1964).</p>
-    </div>
-  </div>
 
-  <div class="feature wrap" style="padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))">
-    <div class="wide grid">
-      <div class="flow">
-        <p class="eyebrow">El Puerto</p>
-        <h3 style="font-size:1.9rem">Puerto López</h3>
-        <p>Puerto López se fundó donde el caño Banderas cae al río Metica, a unos 83 km de Villavicencio. Era el punto navegable más alto del río y el más cercano a Bogotá, y se dice que fue el primer puerto fluvial sobre el Meta. En los Llanos le dicen simplemente El Puerto <span class="cite">(Ardila Luna, 2018, p. 130)</span>.</p>
-        <p>Sus colonos fundadores llegaron de Cundinamarca, Boyacá, Tolima y el Casanare. Trabajaron primero en el ganado de las haciendas cercanas y en conucos, pero «rápidamente los hombres se integraron a la navegación y la pesca, que al poco tiempo serían las actividades más importantes del pueblo» <span class="cite">(p. 131)</span>. Fue en ese pueblo donde mi abuelo creció y se volvió navegante.</p>
-        <p>La fecha de fundación cambia según la fuente, y esa diferencia es parte de la historia que quiero contar:</p>
-        <dl class="dates">
-          <dt>1935</dt><dd>Abel Rey y Clemente Naranjo bautizan el caserío como Puerto López (Alcaldía de Puerto López, 2025).</dd>
-          <dt>1937</dt><dd>El Estado compra parte de la hacienda La Yacuana y funda un corregimiento con ese nombre.</dd>
-          <dt>1946</dt><dd>Corregimiento de Puerto Alfonso López.</dd>
-          <dt>1955</dt><dd>Municipio (Ardila Luna, 2018, pp. 130–131, con base en Torres Torres, 1987).</dd>
-        </dl>
-        <p>En 1948 NAVENAL adaptó en Puerto López los buques con los que empezó a navegar el Meta, y en las décadas siguientes el pueblo fue el punto de transbordo entre el río y la carretera <span class="cite">(Ardila Luna, 2018, pp. 31, 47)</span>.</p>
-      </div>
-      <div>
-        <figure>
-          <img class="photo" src="img/casa-barrio-abel-rey.jpg" alt="Casa de bahareque de un solo piso con puertas de madera y paredes desgastadas" width="566" height="309">
-          <figcaption>Casa de bahareque de colonos fundadores, barrio Abel Rey, Puerto López. Foto: C. Ardila Luna, 2016 (Ardila Luna, 2018, p. 131, Imagen 21). El barrio lleva el nombre de mi bisabuelo.</figcaption>
-        </figure>
-        <figure>
-          <img class="photo" src="img/puerto-banderas.jpg" alt="Embarcación de madera semihundida en la orilla del caño Banderas" width="980" height="305">
-          <figcaption>Puerto Banderas, Puerto López (Ardila Luna, 2018, p. 124, Imagen 20).</figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
+</section>
+<section id="rio">
 
-  <div class="wide two fig">
-    <figure style="margin:0">
-      <div class="fig-head"><h3>Municipios del Meta en 1964</h3><span class="eyebrow">Cabecera y resto</span></div>
-      <img class="rplot" src="img/graficos/municipios_1964.png" alt="" hidden onload="this.hidden=false;this.alt=this.nextElementSibling.querySelector('canvas').getAttribute('aria-label');this.nextElementSibling.hidden=true"><div class="chart-box tall"><canvas id="c-municipios" aria-label="Población por municipio del Meta en 1964, dividida entre cabecera y resto. Villavicencio 58.430, Puerto López 18.054, Acacías 16.612"></canvas></div>
-      <p class="fig-note">Fuente: elaboración propia con el XIII Censo de Población 1964, Resumen del Meta, Cuadro 5. Transcripción preliminar; la suma de municipios coincide con el total departamental (165.530).</p>
-    </figure>
-    <figure style="margin:0">
-      <div class="fig-head"><h3>Puerto López en 1964: hombres y mujeres por edad</h3></div>
-      <img class="rplot" src="img/graficos/piramide_puerto_lopez.png" alt="" hidden onload="this.hidden=false;this.alt=this.nextElementSibling.querySelector('canvas').getAttribute('aria-label');this.nextElementSibling.hidden=true"><div class="chart-box tall"><canvas id="c-piramide" aria-label="Pirámide de población de Puerto López en 1964; hay más hombres que mujeres en casi todos los grupos de edad adulta"></canvas></div>
-      <p class="fig-note">Fuente: elaboración propia con el Censo de 1964, Cuadro 5, p. 28. Hay 123 hombres por cada 100 mujeres (Meta: 119; Villavicencio: 107). En los grupos de 35 a 44 y de 50 a 54 años supera los 150. Es el perfil de un pueblo de colonización y de oficios masculinos como la navegación.</p>
-    </figure>
-  </div>
 
-  <div class="wide">
-    <div class="towns">
-      <article class="town"><h3>Cabuyaro</h3><p class="mono">Antiguo Puerto Barrigón</p><p>Está a 25 km de Puerto López, sobre el Meta. Era el puerto de verano: cuando bajaba el agua, la carga llegaba hasta aquí y seguía en embarcaciones más pequeñas por el Upía o el Humea <span class="cite">(Ardila Luna, 2018, p. 31)</span>. En 1964 tenía 2.695 habitantes, el 90% en zona rural.</p></article>
-      <article class="town"><h3>Orocué</h3><p class="mono">Casanare</p><p>Era una de las paradas del recorrido de Abel. Fue uno de los puertos históricos del Meta, con casas como la Casa de la Playa, de 1921, y todavía es centro de mercado para los pueblos río abajo, que traen productos desde aquí en chalanas <span class="cite">(Ardila Luna, 2018)</span>.</p></article>
-      <article class="town"><h3>Puerto Carreño</h3><p class="mono">Vichada · frontera</p><p>Aquí el Meta desemboca en el Orinoco y empieza Venezuela, a donde a veces llegaba Abel. Desde los años cincuenta las empresas fluviales mantienen un comercio constante entre Villavicencio, Puerto López y Puerto Carreño <span class="cite">(Ardila Luna, 2018, p. 32)</span>.</p></article>
-    </div>
-    <div class="strip">
-      <figure><img class="photo" src="img/orocue-1921.jpg" alt="Fotografía antigua de la orilla de Orocué con personas de pie y embarcaciones" width="985" height="316"><figcaption>Casa de la Playa en Orocué, 1921. Fondo FAFO (Ardila Luna, 2018, p. 197, Imagen 30).</figcaption></figure>
-      <figure><img class="photo" src="img/botemotores-puerto-lopez.jpg" alt="Planchones y botes a motor atracados en un puerto fluvial con playa de arena" width="486" height="308"><figcaption>Botemotores en el puerto del Puente Carlos Lleras, Puerto López (Ardila Luna, 2018, p. 141, Imagen 23).</figcaption></figure>
-      <figure><img class="photo" src="img/camilo-rey-casa-flotante.jpg" alt="Casa flotante de lámina roja y madera amarrada bajo un puente amarillo, con canoas a su lado" width="1206" height="793"><figcaption>Casa flotante y canoas bajo un puente sobre el río. Foto: Camilo Rey.</figcaption></figure>
-    </div>
-    <p class="pending col" style="max-width:var(--measure)"><b>En construcción:</b> fotografías y cartas del archivo familiar para esta sección.</p>
-  </div>
+<section style="padding: 64px 24px 16px">
+<div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px">
+<span style="font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 17px; font-weight: 600; color: #8A5A16">I.</span>
+<h2 style="margin: 0 0 8px; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 42px; font-weight: 700; line-height: 1.12">El río que atraviesa la región</h2>
+<p style="margin: 0">El Meta nace de la unión de varios ríos del piedemonte. El Humadea y el Guayuriba forman el Metica, que pasa frente a Puerto López, y río abajo, cerca de Cabuyaro, el Metica se une al Humea y nace el Meta, que corre hacia el nororiente hasta desembocar en el Orinoco en Puerto Carreño <span style="color: #56635D; font-size: 0.92em">(Ardila Luna, 2018, p. 24)</span>. Es navegable unos ocho meses al año, en la temporada de lluvias. En invierno los barcos llegaban hasta Puerto López y en verano solo hasta Cabuyaro <span style="color: #56635D; font-size: 0.92em">(p. 31)</span>.</p>
+<p style="margin: 0">Desde la Colonia, los Llanos quedaron aislados del centro del país por la cordillera y por la debilidad de las comunicaciones, y se consolidaron como llanuras ganaderas con muy poca población <span style="color: #56635D; font-size: 0.92em">(Safford y Palacios, 2002, pp. 39, 44)</span>. En esa región el río era la vía de integración.</p>
+</div>
 </section>
 
-<!-- III -->
-<section class="part wrap" id="navegacion" aria-labelledby="h-nav">
-  <div class="col part-head">
-    <span class="part-num">III.</span>
-    <h2 id="h-nav">La navegación: dos circuitos sobre el mismo río</h2>
-  </div>
-  <div class="col flow">
-    <p>Entre 1940 y 1970 circulaban por el Meta dos tipos de comercio. Uno era formal, liderado por el Estado a través de NAVENAL, que llegó a tener ocho embarcaciones en el Meta, un buque y siete convoyes, para pasajeros y mercancías. Uno de sus convenios más importantes fue el transporte de sal para los ganaderos con el IDEMA <span class="cite">(Ardila Luna, 2018, p. 109)</span>. Según Ardila-Luna (2022, p. 76), navegaba «principalmente con el transporte de insumos para el ganado y los cultivos».</p>
-    <p>El otro era informal. Lo sostenían navegantes independientes como Abel, que no estaban vinculados a NAVENAL y trabajaban con encargos de voz a voz. Abel abastecía el consumo de los caseríos y resguardos a los que no llegaban ni el Estado ni la carretera.</p>
-  </div>
-
-  <figure class="fig wide">
-    <div class="manifest-wrap">
-      <table class="manifest">
-        <caption>Manifiesto comparado · río Meta, c. 1948–1970</caption>
-        <thead><tr><th scope="col"><span class="sr-only">Aspecto</span></th><th scope="col">Circuito formal: NAVENAL</th><th scope="col">Circuito informal: Abel Rey</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Operador</th><td>Empresa estatal, creada en 1944; en el Meta desde 1948</td><td>Navegante independiente con base en Puerto López</td></tr>
-          <tr><th scope="row">Embarcaciones</th><td>Un buque y siete convoyes; remolcadores traídos de Barranquilla</td><td>Un bote propio</td></tr>
-          <tr><th scope="row">Carga</th><td>Sal e insumos para el ganado y los cultivos; pasajeros</td><td>Víveres y mercancía al por mayor, encargos particulares, vestidos de novia, ataúdes</td></tr>
-          <tr><th scope="row">Clientes</th><td>Grandes haciendas ganaderas; convenio con el IDEMA</td><td>Caseríos, resguardos indígenas y haciendas remotas</td></tr>
-          <tr><th scope="row">Cómo se pedía</th><td>Contratos y tarifas de la empresa</td><td>Voz a voz; pedidos anotados en Villavicencio a fin de año</td></tr>
-          <tr><th scope="row">Recorrido</th><td>Puerto López – Puerto Carreño</td><td>Puerto López hasta Orocué, La Hermosa, Guachiría, el Cravo Norte, el Cravo Sur y a veces Venezuela</td></tr>
-          <tr><th scope="row">Fuentes</th><td>Ardila Luna (2018, pp. 31, 109); Ardila-Luna (2022, p. 76)</td><td>Flor Alba Garzón, comunicación personal (2026)</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="fig-note">Elaboración propia. Pendiente: completar con Melendro Serna (1978) para NAVENAL y con nuevas entrevistas familiares para el circuito informal.</p>
-  </figure>
-
-  <div class="col flow">
-    <h3>Las embarcaciones del río</h3>
-    <p>En el Meta conviven embarcaciones de escalas muy distintas. Las canoas de madera, de tres a cuatro metros, sirven para la pesca y el transporte local. Las chalanas o bongos, de 15 a 50 metros, cargan entre 25 y 120 toneladas. Los botemotores y los convoyes, como los que usó NAVENAL, mueven cientos de toneladas <span class="cite">(Ardila Luna, 2018, pp. 33–34)</span>. Falta confirmar en las entrevistas en qué tipo de embarcación viajaba Abel.</p>
-  </div>
-  <div class="wide two fig">
-    <figure style="margin:0"><img class="photo" src="img/embarcaciones-1.jpg" alt="Infografía: canoa y chalana o bongo, con sus medidas y capacidad de carga" width="916" height="655"><figcaption>Canoa y chalana o bongo.</figcaption></figure>
-    <figure style="margin:0"><img class="photo" src="img/embarcaciones-2.jpg" alt="Infografía: botemotor y convoy, con sus medidas, tripulación y capacidad de carga" width="940" height="677"><figcaption>Botemotor y convoy.</figcaption></figure>
-  </div>
-  <p class="fig-note wide">«Embarcaciones de carga en río Meta». Diseño: Miguel Ángel Acosta Sandino; medidas tomadas de SENA (2007) y de entrevistas a empresarios fluviales. En Ardila Luna (2018, pp. 33–34).</p>
-
-  <figure class="fig wide">
-    <div class="fig-head"><h3>El año de Abel frente al año del río</h3><span class="eyebrow">Calendario aproximado</span></div>
-    <div class="cal">
-      <div class="cal-grid" role="table" aria-label="Calendario: el río es navegable en la temporada de lluvias; Abel compra en diciembre y viaja de febrero a julio">
-        <span></span><span class="m">ene</span><span class="m">feb</span><span class="m">mar</span><span class="m">abr</span><span class="m">may</span><span class="m">jun</span><span class="m">jul</span><span class="m">ago</span><span class="m">sep</span><span class="m">oct</span><span class="m">nov</span><span class="m">dic</span>
-        <span class="lbl">Río navegable (lluvias)</span>
-        <span class="c"></span><span class="c"></span><span class="c"></span><span class="c agua"></span><span class="c agua"></span><span class="c agua"></span><span class="c agua"></span><span class="c agua"></span><span class="c agua"></span><span class="c agua"></span><span class="c agua"></span><span class="c"></span>
-        <span class="lbl">Ciclo de Abel</span>
-        <span class="c"></span><span class="c viaje">sale</span><span class="c viaje"></span><span class="c viaje"></span><span class="c viaje"></span><span class="c viaje"></span><span class="c viaje">regresa</span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c compra">compra</span>
-      </div>
-    </div>
-    <p class="fig-note">Temporada navegable: unos ocho meses en época de lluvias (Ardila Luna, 2018, p. 31); los meses marcados son una aproximación al invierno llanero. Ciclo de Abel: entrevista a Flor Alba Garzón. Abel salía en febrero, en pleno verano, con el río bajo. Puede que la fecha esté mal recordada, o puede que un bote pequeño sí pudiera navegar cuando los buques grandes no podían. Lo voy a contrastar en las próximas entrevistas.</p>
-  </figure>
-
-  <div class="wide two fig">
-    <figure style="margin:0">
-      <div class="fig-head"><h3>Vehículos automotores por departamento</h3><span class="eyebrow">1960</span></div>
-      <img class="rplot" src="img/graficos/parque_automotor_1960.png" alt="" hidden onload="this.hidden=false;this.alt=this.nextElementSibling.querySelector('canvas').getAttribute('aria-label');this.nextElementSibling.hidden=true"><div class="chart-box tall"><canvas id="c-automotor" aria-label="Vehículos por departamento en 1960: Cundinamarca 60.229, Antioquia 22.644; Meta 1.429, el 0,8% del país"></canvas></div>
-      <p class="fig-note">Fuente: Alvear Sanín (2008), Tabla 40, con base en el Anuario General de Estadística de 1960. Total nacional: 181.918 vehículos.</p>
-    </figure>
-    <div class="flow" style="align-self:center">
-      <div class="stat-row"><div class="stat"><b class="mono">0,8%</b><span>de los vehículos del país estaban en el Meta en 1960</span></div></div>
-      <p>Una década después de que NAVENAL llegara al Meta, el departamento tenía 1.429 vehículos, menos del 1% del país. En la mayor parte de la llanura no había carretera que usar. Donde la falta de vías reducía al mínimo la presencia del Estado <span class="cite">(Ospina Ovalle, 2021, p. 153)</span>, el comercio por el río era la forma normal de abastecerse.</p>
-      <figure style="margin:0"><img class="photo" src="img/vapor-uribante.jpg" alt="Vapor de rueda Uribante navegando, en fotografía antigua de tono sepia" width="400" height="282"><figcaption>Vapores del Meta (Ardila Luna, 2018, p. 107, Imagen 18).</figcaption></figure>
-    </div>
-  </div>
+<section style="padding: 32px 24px">
+<figure style="max-width: 1080px; margin: 0 auto">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 20px; margin-bottom: 12px">
+<h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 20px; font-weight: 600">El río Meta, de Puerto López a Puerto Carreño</h3>
+<span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #56635D">Mapa interactivo río Meta</span>
+</div>
+<div style="border: 1px solid #C6CDC1; background: #E1E6DC">
+<div style="position: relative; line-height: 0">
+<img src="img/mapa-puertos-ardila.jpg" alt="Mapa de puertos sobre el río Meta, de Villavicencio y Puerto López hasta Puerto Carreño, con los afluentes, las carreteras y la frontera con Venezuela" style="display: block; width: 100%; height: auto">
+<button type="button" class="hs hs-mercado" style="left: 9.49%; top: 69.89%" data-name="Villavicencio" data-note="Mercado mayorista. Cada fin de año Abel compraba aquí la mercancía y anotaba los encargos (Flor Alba Garzón, 2026)." aria-label="Villavicencio"></button>
+<button type="button" class="hs hs-base" style="left: 21.41%; top: 72.46%" data-name="Puerto López" data-note="Base de Abel Rey. Puerto sobre el río Metica, el punto navegable más alto y más cercano a Bogotá (Ardila Luna, 2018, p. 130)." aria-label="Puerto López"></button>
+<button type="button" class="hs hs-puerto" style="left: 23.29%; top: 66.99%" data-name="Cabuyaro" data-note="Antiguo Puerto Barrigón. Puerto de verano, cuando el agua no alcanzaba a Puerto López (Ardila Luna, 2018, p. 31)." aria-label="Cabuyaro"></button>
+<button type="button" class="hs hs-puerto" style="left: 33.41%; top: 67.15%" data-name="Puerto Gaitán" data-note="Hoy es el puerto de pasajeros del Meta. Por río desde Puerto López son entre 6 y 18 horas, según la embarcación (Ardila Luna, 2018)." aria-label="Puerto Gaitán"></button>
+<button type="button" class="hs hs-parada" style="left: 37.41%; top: 47.18%" data-name="Río Cravo Sur" data-note="Afluente del Meta." aria-label="Río Cravo Sur"></button>
+<button type="button" class="hs hs-parada" style="left: 42.43%; top: 53.78%" data-name="Orocué" data-note="Parada del recorrido de Abel según Flor Alba Garzón. Puerto histórico del Casanare." aria-label="Orocué"></button>
+<button type="button" class="hs hs-puerto" style="left: 49.18%; top: 44.77%" data-name="Santa Rosalía" data-note="Pueblo ribereño que todavía depende del río para el mercado (Ardila Luna, 2018)." aria-label="Santa Rosalía"></button>
+<button type="button" class="hs hs-parada" style="left: 49.96%; top: 5.31%" data-name="Río Cravo Norte" data-note="Parte del recorrido de Abel según Flor Alba Garzón." aria-label="Río Cravo Norte"></button>
+<button type="button" class="hs hs-puerto" style="left: 56.08%; top: 34.30%" data-name="La Primavera" data-note="Pueblo ribereño del Vichada." aria-label="La Primavera"></button>
+<button type="button" class="hs hs-puerto" style="left: 69.57%; top: 17.39%" data-name="Nueva Antioquia" data-note="Puesto de la Armada Nacional sobre el Meta, en la frontera con Venezuela (Ardila Luna, 2018, Mapa No. 2)." aria-label="Nueva Antioquia"></button>
+<button type="button" class="hs hs-parada" style="left: 96.39%; top: 14.65%" data-name="Puerto Carreño" data-note="Desembocadura del Meta en el Orinoco y frontera con Venezuela, hasta donde a veces llegaba Abel." aria-label="Puerto Carreño"></button>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 14px 16px; border-top: 1px solid #C6CDC1; font-size: 16px">
+<div style="flex: 1 1 420px; min-width: 0">
+<b id="mapa-nombre" style="font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 19px">Puerto López</b><br>
+<span id="mapa-nota">Base de Abel Rey. Puerto sobre el río Metica, el punto navegable más alto y más cercano a Bogotá (Ardila Luna, 2018, p. 130).</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-content: flex-start; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">
+<span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; background: #A26B1C"></span>Recorrido de Abel</span>
+<span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; border: 2px solid #2B6970; box-sizing: border-box"></span>Otros puertos</span>
+<span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; background: #1B2623"></span>Mercado</span>
+</div>
+</div>
+</div>
+<figcaption style="margin-top: 10px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Mapa base: «Mapa No. 2. Puertos sobre el río Meta», elaborado en ArcGIS por Carolina Ardila y finalizado en Illustrator por Miguel Acosta (Ardila Luna, 2018, p. 29). Las carreteras del mapa son las actuales. Capa interactiva de elaboración propia, con las paradas según la entrevista a Flor Alba Garzón (2026).</figcaption>
+</figure>
 </section>
 
-<!-- Fuentes -->
-<section class="part wrap" id="fuentes" aria-labelledby="h-fuentes">
-  <div class="col part-head">
-    <span class="part-num">Fuentes y datos</span>
-    <h2 id="h-fuentes">De dónde viene lo que está aquí</h2>
-  </div>
-  <div class="col flow">
-    <h3>Fuentes familiares</h3>
-    <p>Mi abuelo falleció en 2022, así que su experiencia se reconstruye de forma indirecta. La fuente principal es una entrevista a Flor Alba Garzón, su esposa (20 de septiembre de 2026). Los testimonios orales tienen límites claros para fechar y ubicar los hechos, por eso los uso sobre todo para describir las dinámicas del comercio, las temporadas de viaje, los clientes y las mercancías, y los contrasto con la literatura y los datos.</p>
-    <h3 style="margin-top:28px">Datos usados en este borrador</h3>
-  </div>
-  <div class="wide src-table-wrap" style="margin-top:16px">
-    <table class="src">
-      <thead><tr><th>Serie</th><th>Origen</th><th>Variables</th><th>Cobertura</th><th>Tratamiento</th></tr></thead>
-      <tbody>
-        <tr><td>Población del Meta y municipios</td><td>Censos de Población 1938 (Tomo XVI), 1951 y 1964 (Resumen del Meta), Contraloría y DANE</td><td>Población total, cabecera y resto; sexo; grupos de edad (1964)</td><td>Intendencia/Departamento del Meta y sus municipios</td><td>Transcripción propia de los cuadros escaneados; verificación de que los municipios sumen el total departamental; tasas de crecimiento geométrico entre fechas censales</td></tr>
-        <tr><td>Carreteras nacionales</td><td>Alvear Sanín (2008), Tabla 35 (Barnhart)</td><td>Kilómetros</td><td>Nacional, 1932–1948, cada 4 años</td><td>Transcripción</td></tr>
-        <tr><td>Carga por modo</td><td>Alvear Sanín (2008), Tabla 38 (misión Currie)</td><td>Ton-km y porcentaje</td><td>Nacional, 1947</td><td>Transcripción</td></tr>
-        <tr><td>Carga del Magdalena</td><td>Alvear Sanín (2008), cifras en el texto</td><td>Toneladas</td><td>Siete años entre 1915 y 1956</td><td>Recopilación de cifras sueltas; serie incompleta</td></tr>
-        <tr><td>Parque automotor</td><td>Alvear Sanín (2008), Tabla 40 (Anuario General de Estadística)</td><td>Vehículos</td><td>Departamentos, 1960</td><td>Transcripción</td></tr>
-        <tr><td>Mapa</td><td>Natural Earth; Ardila Luna (2018); entrevista familiar</td><td>Ríos, límites, puertos y paradas</td><td>Cuenca del Meta</td><td>Elaboración propia; Metica trazado a mano</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col flow" style="margin-top:28px">
-    <p class="cite">Los archivos de datos están en la carpeta <span class="mono">datos/</span> del sitio.</p>
-    <h3 style="margin-top:28px">Lo que falta para la entrega final</h3>
-    <ul class="todo">
-      <li>Entrevistas a los hijos y familiares que acompañaron a Abel en sus viajes, y digitalización de fotos y cartas.</li>
-      <li>Una base de datos de testimonios: paradas, mercancías, clientes y épocas del año, codificadas a partir de las entrevistas.</li>
-      <li>El censo de 1973, para cerrar la serie de población de los pueblos navegantes.</li>
-      <li>Melendro Serna (1978), para las cifras de NAVENAL entre 1945 y 1972.</li>
-      <li>El Censo Agropecuario de 1960, para el ganado del Meta.</li>
-      <li>Una capa del mapa con los episodios de la guerrilla liberal sobre los ríos (Ospina Ovalle, 2021).</li>
-    </ul>
-    <h3 style="margin-top:36px">Bibliografía</h3>
-    <ul class="biblio">
-      <li>Alcaldía de Puerto López. (2025). <i>Pasado, presente y futuro</i>. https://www.puertolopez-meta.gov.co/publicaciones/2275/pasado-presente-y-futuro/</li>
-      <li>Alvear Sanín, J. (2008). <i>Historia del transporte y la infraestructura en Colombia (1492–2007)</i>. Ministerio de Transporte.</li>
-      <li>Ardila Luna, D. C. (2016). El río Meta y los proyectos para la integración de los Llanos Orientales colombianos, desde la Colonia hasta el siglo XXI. <i>Anuario de Historia Regional y de las Fronteras, 21</i>(2).</li>
-      <li>Ardila Luna, D. C. (2018). <i>«El proyecto lo trajeron hecho». El proyecto de navegabilidad del río Meta en la vida con el río</i> [Tesis doctoral, Universidad de los Andes].</li>
-      <li>Ardila-Luna, D. C. (2022). El río Meta en el proceso de fronterización de la frontera colombiana, 1532–2016. <i>Agua y Territorio</i>, (19), 67–80.</li>
-      <li>Contraloría General de la República. (1942). <i>Censo General de Población, 5 de julio de 1938. Tomo XVI: Resumen general del país</i>. Imprenta Nacional.</li>
-      <li>DANE. (1954). <i>Censo de Población, 9 de mayo de 1951</i>.</li>
-      <li>DANE. (1970). <i>XIII Censo Nacional de Población y II de Edificios y Viviendas, 15 de julio de 1964. Resumen del Meta</i>. Imprenta Nacional.</li>
-      <li>Mazzuca, S. y Robinson, J. A. (2006). <i>Political conflict and power-sharing in the origins of modern Colombia</i> (NBER Working Paper No. 12099).</li>
-      <li>Natural Earth. (s. f.). <i>Rivers and lake centerlines; Admin 0 and Admin 1, 1:10m</i>. naturalearthdata.com</li>
-      <li>Ospina Ovalle, C. A. (2021). <i>Incendio en la llanura: surgimiento, auge y entrega de las guerrillas en los Llanos Orientales 1949–1953</i>. Escuela Superior de Guerra; Planeta.</li>
-      <li>Quintero González, J. R., Ramírez Sosa, Y. A. y Cortázar Ávila, A. M. (2020). Transporte fluvial en Colombia. <i>Revista Ciudades, Estados y Política, 7</i>(1), 49–68.</li>
-      <li>Safford, F. y Palacios, M. (2002). <i>Colombia: Fragmented land, divided society</i>. Oxford University Press.</li>
-      <li>Serje, M. y Ardila Luna, D. C. (s. f.). El río como infraestructura: paisaje y navegación en el río Meta, Colombia.</li>
-    </ul>
-  </div>
+<section style="padding: 24px 24px">
+<div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px">
+<h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 24px; font-weight: 600">Línea temporal: el Meta en el siglo XX</h3>
+<p style="margin: 0">La navegación del Meta no avanzó en línea recta, fue fluctuante junto con los hitos históricos que marcaron y moldearon a la región.</p>
+<ol style="list-style: none; margin: 12px 0 0 6px; padding: 0; border-left: 2px solid #2B6970; display: flex; flex-direction: column; gap: 22px; font-size: 16px">
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #EDF0E9; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">1899–1902</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Violencia · río</span><br>La Guerra de los Mil Días inicia la decadencia de la navegación comercial en el Meta. Llegan a los Llanos colonos liberales que buscan refugio. <span style="color: #56635D; font-size: 0.85em">Ardila-Luna, 2022, p. 75; Ospina Ovalle, 2021, p. 57</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #EDF0E9; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">Década de 1930</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Río</span><br>Tras 1929 la navegación comercial se suspende. Es el vacío que llenan navegantes independientes. <span style="color: #56635D; font-size: 0.85em">Ardila-Luna, 2022, p. 75; Ardila Luna, 2018, p. 109</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #2B6970; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">1935</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Puerto López</span><br>Abel Rey (padre) y Clemente Naranjo bautizan el caserío como Puerto López, según la Alcaldía. <span style="color: #56635D; font-size: 0.85em">Alcaldía de Puerto López, 2025</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #EDF0E9; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">1936</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Carretera</span><br>Se abre la carretera Bogotá–Villavicencio, que según se decía solucionaría el alto costo y la escasez de alimentos. No llega a la llanura profunda. <span style="color: #56635D; font-size: 0.85em">Alvear Sanín, 2008, p. 318</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #EDF0E9; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">1944</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Estado</span><br>El gobierno de López Pumarejo crea la Compañía Nacional de Navegación, NAVENAL, para integrar las fronteras fluviales con el Caribe. <span style="color: #56635D; font-size: 0.85em">Ardila Luna, 2018, p. 109</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #EDF0E9; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">1948</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Estado · río</span><br>NAVENAL empieza a operar en el Meta con remolcadores y buques traídos de Barranquilla y adaptados en Puerto López. <span style="color: #56635D; font-size: 0.85em">Ardila Luna, 2018, pp. 31, 109</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #A26B1C; border: 2px solid #A26B1C"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">1949–1953</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Violencia</span><br>Las guerrillas liberales del Llano se ubican a la orilla de los ríos navegables y se comunican en canoas con motor y lanchas de poco calado. <span style="color: #56635D; font-size: 0.85em">Ospina Ovalle, 2021, p. 173</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #EDF0E9; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">Década de 1950</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Comercio</span><br>Colonos y llaneros crean empresas privadas de navegación que llevan ganado, yuca y plátano hacia Bogotá y traen maquinaria, sal y víveres. <span style="color: #56635D; font-size: 0.85em">Ardila Luna, 2018, p. 109</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #2B6970; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">1955</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Puerto López</span><br>Puerto López se erige como municipio. <span style="color: #56635D; font-size: 0.85em">Ardila Luna, 2018, p. 131, con base en Torres Torres, 1987</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #EDF0E9; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">1960–1970</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Comercio</span><br>Aumenta el transporte de ganado por el río. Las reses llegan a Puerto López, engordan unas semanas y siguen en camión a Bogotá. <span style="color: #56635D; font-size: 0.85em">Ardila Luna, 2018, p. 47</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #EDF0E9; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">Década de 1970</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Carretera</span><br>Todavía se busca financiación para ampliar y recuperar el tramo Villavicencio–Puerto López. <span style="color: #56635D; font-size: 0.85em">Alvear Sanín, 2008, p. 399</span></li>
+<li style="position: relative; padding-left: 26px"><span style="position: absolute; left: -8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #EDF0E9; border: 2px solid #2B6970"></span><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 15px; color: #2B6970">1984</span> <span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #56635D">Epílogo</span><br>NAVENAL es liquidada por problemas de presupuesto y administración. <span style="color: #56635D; font-size: 0.85em">Ardila Luna, 2018, p. 109</span></li>
+</ol>
+</div>
+</section>
+
+<section style="padding: 56px 24px 16px; margin-top: 32px; border-top: 1px solid #C6CDC1">
+<div style="max-width: 680px; margin: 0 auto 28px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #56635D">La transición del transporte</p>
+<h2 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 36px; font-weight: 700; line-height: 1.15">Del río a la carretera</h2>
+</div>
+<figure style="max-width: 960px; margin: 0 auto 40px">
+<img src="img/transicion-buenavista.jpg" alt="Fotografía en blanco y negro de un bus cargado en una carretera destapada de montaña, junto a un muro de piedra, con arrieros y mulas cargadas que avanzan por la misma vía" style="display: block; width: 100%; height: auto; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Apertura de la carretera Bogotá–Villavicencio (1936). Sector de Buenavista. Foto: Horst Martin.</figcaption>
+</figure>
+<div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px">
+<h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 24px; font-weight: 600">El país se pasa a la carretera; el Llano sigue en el río</h3>
+<p style="margin: 0">Mientras el Meta vivía su reactivación, el resto de Colombia apostaba por las carreteras. Entre 1932 y 1948 la red nacional casi se cuadruplicó. Pero en 1947 los ríos todavía movían más de una cuarta parte de la carga del país.</p>
+</div>
+</section>
+
+<section style="padding: 24px 24px">
+<div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px">
+<figure style="margin: 0; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-bottom: 12px"><h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 19px; font-weight: 600">Progresión de los km de carreteras nacionales (1932–1948)</h3></div>
+<img src="img/graficos/carreteras.png" alt="Kilómetros de carreteras nacionales, de 3.006 en 1932 a 11.607 en 1948" style="display: block; width: 100%; height: auto; background: #FFFFFF; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 10px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Fuente: Gráfico de elaboración propia. Fuente de datos: Alvear Sanín (2008), Tabla 35. La línea vertical marca la apertura de la carretera Bogotá–Villavicencio (1936).</figcaption>
+</figure>
+<figure style="margin: 0; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-bottom: 12px"><h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 19px; font-weight: 600">Carga por modo de transporte</h3><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #56635D">1947, % de ton-km</span></div>
+<img src="img/graficos/carga_modos_1947.png" alt="Carga por modo en 1947: carreteras 35,8%, ferrocarriles 32,5%, vías fluviales 28,5%, aerolíneas 3,2%" style="display: block; width: 100%; height: auto; background: #FFFFFF; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 10px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Fuente: Gráfico de elaboración propia. Datos: Alvear Sanín (2008), Tabla 38, con base en la misión Currie.</figcaption>
+</figure>
+</div>
+</section>
+
+
+
+
+
+</section>
+<section id="pueblos">
+
+
+<section style="padding: 64px 24px 16px">
+<div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px">
+<span style="font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 17px; font-weight: 600; color: #8A5A16">II.</span>
+<h2 style="margin: 0 0 8px; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 42px; font-weight: 700; line-height: 1.12">Pueblos navegantes</h2>
+<p style="margin: 0">A lo largo del Meta se formó una cadena de pueblos que nacieron con el río y vivían de la pesca, la navegación y el comercio. Entre 1938 y 1964 la población del Meta se triplicó, y el crecimiento se aceleró después de 1951, en los años de la Violencia y de la colonización de la llanura.</p>
+</div>
+</section>
+
+<section style="padding: 32px 24px">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 36px; align-items: center">
+<figure style="flex: 1 1 480px; min-width: 0; margin: 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-bottom: 12px"><h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 19px; font-weight: 600">Población según los censos</h3></div>
+<img src="img/graficos/poblacion_censos.png" alt="Población del Meta: 51.674 en 1938, 67.492 en 1951 y 165.530 en 1964; Villavicencio: 24.315, 33.342 y 58.430; Puerto López: 18.054 en 1964" style="display: block; width: 100%; height: auto; background: #FFFFFF; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 10px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Fuente: elaboración propia con los Censos de Población de 1938, 1951 y 1964 (Resumen del Meta). En 1938 y 1951 Puerto López no figuraba como municipio.</figcaption>
+</figure>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-wrap: wrap; gap: 28px">
+<div><b style="display: block; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 34px; line-height: 1; color: #2B6970">2,1%</b><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">Crecimiento promedio poblacional del Meta, 1938–1951</span></div>
+<div><b style="display: block; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 34px; line-height: 1; color: #2B6970">7,0%</b><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">Crecimiento promedio poblacional del Meta, 1951–1964</span></div>
+</div>
+<p style="margin: 0">En 1964, nueve años después de volverse municipio, Puerto López ya era el segundo municipio más poblado del Meta, con 18.054 habitantes, después de Villavicencio. Ocho de cada diez vivían fuera del casco urbano, frente a dos de cada diez en Villavicencio.</p></div>
+</div>
+</section>
+
+<section style="padding: 36px 24px; margin: 24px 0; background: #E1E6DC; border-top: 1px solid #C6CDC1; border-bottom: 1px solid #C6CDC1">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 36px">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #56635D">El Puerto</p>
+<h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 34px; font-weight: 700">Puerto López</h3>
+<p style="margin: 0">Puerto López se fundó donde el caño Banderas cae al río Metica, a unos 83 km de Villavicencio. Era el punto navegable más alto del río y el más cercano a Bogotá, y se dice que fue el primer puerto fluvial sobre el Meta <span style="color: #56635D; font-size: 0.92em">(Ardila Luna, 2018, p. 130)</span>.</p>
+<p style="margin: 0">Sus colonos fundadores llegaron de Cundinamarca, Boyacá, Tolima y el Casanare. Trabajaron primero en el ganado de las haciendas cercanas y en conucos, pero «rápidamente los hombres se integraron a la navegación y la pesca, que al poco tiempo serían las actividades más importantes del pueblo» <span style="color: #56635D; font-size: 0.92em">(p. 131)</span>.</p>
+<p style="margin: 0">Puerto López se formalizó como municipio en un proceso que duró dos décadas:</p>
+<div style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 6px 16px; font-size: 16px">
+<span style="font-family: 'Courier Prime', 'Courier New', monospace; color: #2B6970">1935</span><span>Abel Rey y Clemente Naranjo bautizan el caserío como Puerto López (Alcaldía de Puerto López, 2025).</span>
+<span style="font-family: 'Courier Prime', 'Courier New', monospace; color: #2B6970">1937</span><span>El Estado compra parte de la hacienda La Yacuana y funda un corregimiento con ese nombre.</span>
+<span style="font-family: 'Courier Prime', 'Courier New', monospace; color: #2B6970">1946</span><span>Formalmente designado como corregimiento de Puerto Alfonso López.</span>
+<span style="font-family: 'Courier Prime', 'Courier New', monospace; color: #2B6970">1955</span><span>Municipio (Ardila Luna, 2018, pp. 130–131, con base en Torres Torres, 1987).</span>
+</div>
+<p style="margin: 0">En 1948 NAVENAL adaptó en Puerto López los buques con los que empezó a navegar el Meta, y en las décadas siguientes el pueblo fue el punto de transbordo entre el río y la carretera <span style="color: #56635D; font-size: 0.92em">(Ardila Luna, 2018, pp. 31, 47)</span>.</p>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<figure style="margin: 0">
+<img src="img/casa-barrio-abel-rey.jpg" alt="Casa de bahareque de un solo piso con puertas de madera y paredes desgastadas" style="display: block; width: 100%; height: auto; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Casa de bahareque de colonos fundadores, barrio Abel Rey, Puerto López. Foto: C. Ardila Luna, 2016 (Ardila Luna, 2018, p. 131, Imagen 21).</figcaption>
+</figure>
+<figure style="margin: 0">
+<img src="img/puerto-banderas.jpg" alt="Embarcación de madera semihundida en la orilla del caño Banderas" style="display: block; width: 100%; height: auto; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Puerto Banderas, Puerto López (Ardila Luna, 2018, p. 124, Imagen 20).</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section style="padding: 32px 24px">
+<div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px">
+<figure style="margin: 0; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-bottom: 12px"><h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 19px; font-weight: 600">Municipios del Meta en 1964</h3><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #56635D">Cabecera y resto</span></div>
+<img src="img/graficos/municipios_1964.png" alt="Población por municipio del Meta en 1964, dividida entre cabecera y resto; Villavicencio 58.430, Puerto López 18.054, Acacías 16.612" style="display: block; width: 100%; height: auto; background: #FFFFFF; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 10px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Fuente: elaboración propia con el XIII Censo de Población 1964, Resumen del Meta, Cuadro 5. Transcripción preliminar; la suma de municipios coincide con el total departamental (165.530).</figcaption>
+</figure>
+<figure style="margin: 0; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-bottom: 12px"><h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 19px; font-weight: 600">Puerto López en 1964: hombres y mujeres por edad</h3></div>
+<img src="img/graficos/piramide_puerto_lopez.png" alt="Pirámide de población de Puerto López en 1964; hay más hombres que mujeres en casi todos los grupos de edad adulta" style="display: block; width: 100%; height: auto; background: #FFFFFF; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 10px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Fuente: elaboración propia con el Censo de 1964, Cuadro 5, p. 28. Hay 123 hombres por cada 100 mujeres (Meta: 119; Villavicencio: 107). En los grupos de 35 a 44 y de 50 a 54 años supera los 150. Es el perfil de un pueblo de colonización y de oficios masculinos como la navegación.</figcaption>
+</figure>
+</div>
+</section>
+
+<section style="padding: 24px 24px">
+<div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px">
+<article style="border-top: 3px solid #2B6970; padding-top: 12px; display: flex; flex-direction: column; gap: 8px; font-size: 16px">
+<h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 21px; font-weight: 600">Cabuyaro</h3>
+<span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">Antiguo Puerto Barrigón</span>
+<p style="margin: 0">Está a 25 km de Puerto López, sobre el Meta. Era el puerto de verano: cuando bajaba el agua, la carga llegaba hasta aquí y seguía en embarcaciones más pequeñas por el Upía o el Humea <span style="color: #56635D">(Ardila Luna, 2018, p. 31)</span>. En 1964 tenía 2.695 habitantes, el 90% en zona rural.</p>
+</article>
+<article style="border-top: 3px solid #2B6970; padding-top: 12px; display: flex; flex-direction: column; gap: 8px; font-size: 16px">
+<h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 21px; font-weight: 600">Orocué</h3>
+<span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">Casanare</span>
+<p style="margin: 0">Era una de las paradas del recorrido de Abel. Fue uno de los puertos históricos del Meta, con casas como la Casa de la Playa, de 1921, y todavía es centro de mercado para los pueblos río abajo, que traen productos desde aquí en chalanas <span style="color: #56635D">(Ardila Luna, 2018)</span>.</p>
+</article>
+<article style="border-top: 3px solid #2B6970; padding-top: 12px; display: flex; flex-direction: column; gap: 8px; font-size: 16px">
+<h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 21px; font-weight: 600">Puerto Carreño</h3>
+<span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">Vichada · frontera</span>
+<p style="margin: 0">Aquí el Meta desemboca en el Orinoco y empieza Venezuela, a donde a veces llegaba Abel. Desde los años cincuenta las empresas fluviales mantienen un comercio constante entre Villavicencio, Puerto López y Puerto Carreño <span style="color: #56635D">(Ardila Luna, 2018, p. 32)</span>.</p>
+</article>
+</div>
+</section>
+
+<section style="padding: 24px 24px">
+<div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px">
+<figure style="margin: 0; min-width: 0">
+<img src="img/orocue-1921.jpg" alt="Fotografía antigua de la orilla de Orocué con personas de pie y embarcaciones" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Casa de la Playa en Orocué, 1921. Fondo FAFO (Ardila Luna, 2018, p. 197, Imagen 30).</figcaption>
+</figure>
+<figure style="margin: 0; min-width: 0">
+<img src="img/botemotores-puerto-lopez.jpg" alt="Planchones y botes a motor atracados en un puerto fluvial con playa de arena" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Botemotores en el puerto del Puente Carlos Lleras, Puerto López (Ardila Luna, 2018, p. 141, Imagen 23).</figcaption>
+</figure>
+<figure style="margin: 0; min-width: 0">
+<img src="img/vapor-meta-1920.jpg" alt="Fotografía antigua del vapor Meta atracado en la orilla, con personas en la cubierta y en tierra" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Vapor Meta, c. 1920. Fondo FAFO (Ardila Luna, 2018, p. 201, Imagen 32).</figcaption>
+</figure>
+</div>
+<p style="max-width: 1080px; margin: 16px auto 0; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 13px; color: #56635D"><span style="color: #8A5A16">En construcción:</span> fotografías y cartas del archivo familiar para esta sección.</p>
+</section>
+
+
+
+
+</section>
+<section id="navegacion">
+
+
+<section style="padding: 64px 24px 16px">
+<div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px">
+<span style="font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 17px; font-weight: 600; color: #8A5A16">III.</span>
+<h2 style="margin: 0 0 8px; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 42px; font-weight: 700; line-height: 1.12">La navegación: dos circuitos sobre el mismo río</h2>
+<p style="margin: 0">Entre 1940 y 1970 circulaban por el Meta dos tipos de comercio. Uno era formal, liderado por el Estado a través de NAVENAL, que llegó a tener ocho embarcaciones en el Meta, un buque y siete convoyes, para pasajeros y mercancías. Uno de sus convenios más importantes fue el transporte de sal para los ganaderos con el IDEMA <span style="color: #56635D; font-size: 0.92em">(Ardila Luna, 2018, p. 109)</span>. Según Ardila-Luna (2022, p. 76), navegaba «principalmente con el transporte de insumos para el ganado y los cultivos».</p>
+<p style="margin: 0">El otro era informal. Lo sostenían navegantes independientes como Abel, que no estaban vinculados a NAVENAL y trabajaban con encargos de voz a voz. Abel abastecía el consumo de los caseríos y resguardos a los que no llegaban ni el Estado ni la carretera.</p>
+</div>
+</section>
+
+<section style="padding: 32px 24px">
+<figure style="max-width: 1080px; margin: 0 auto">
+<div style="overflow-x: auto; border: 1px solid #1B2623">
+<table style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 16px">
+<caption style="caption-side: top; text-align: left; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 14px; border-bottom: 1px solid #1B2623; background: #E1E6DC">Cuadro comparativo: circuito formal e informal</caption>
+<thead>
+<tr>
+<th scope="col" style="padding: 11px 14px; text-align: left; border-bottom: 1px solid #1B2623; width: 17%"></th>
+<th scope="col" style="padding: 11px 14px; text-align: left; border-bottom: 1px solid #1B2623; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 19px; color: #2B6970">Circuito formal: NAVENAL</th>
+<th scope="col" style="padding: 11px 14px; text-align: left; border-bottom: 1px solid #1B2623; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 19px; color: #8A5A16">Circuito informal: Abel Rey</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row" style="padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px dashed #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #56635D">Operador</th><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Empresa estatal, creada en 1944; en el Meta desde 1948</td><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Navegante independiente con base en Puerto López</td></tr>
+<tr><th scope="row" style="padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px dashed #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #56635D">Embarcaciones</th><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Un buque y siete convoyes; remolcadores traídos de Barranquilla</td><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Un bote propio</td></tr>
+<tr><th scope="row" style="padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px dashed #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #56635D">Carga</th><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Sal e insumos para el ganado y los cultivos; pasajeros</td><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Víveres y mercancía al por mayor, encargos particulares, vestidos de novia, ataúdes</td></tr>
+<tr><th scope="row" style="padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px dashed #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #56635D">Clientes</th><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Grandes haciendas ganaderas; convenio con el IDEMA</td><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Caseríos, resguardos indígenas y haciendas remotas</td></tr>
+<tr><th scope="row" style="padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px dashed #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #56635D">Cómo se pedía</th><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Contratos y tarifas de la empresa</td><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Voz a voz; pedidos anotados en Villavicencio a fin de año</td></tr>
+<tr><th scope="row" style="padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px dashed #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #56635D">Recorrido</th><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Puerto López – Puerto Carreño</td><td style="padding: 11px 14px; vertical-align: top; border-bottom: 1px dashed #C6CDC1">Puerto López hasta Orocué, La Hermosa, Guachiría, el Cravo Norte, el Cravo Sur y a veces Venezuela</td></tr>
+<tr><th scope="row" style="padding: 11px 14px; text-align: left; vertical-align: top; font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #56635D">Fuentes</th><td style="padding: 11px 14px; vertical-align: top">Ardila Luna (2018, pp. 31, 109); Ardila-Luna (2022, p. 76)</td><td style="padding: 11px 14px; vertical-align: top">Flor Alba Garzón, comunicación personal (2026)</td></tr>
+</tbody>
+</table>
+</div>
+<figcaption style="margin-top: 10px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Elaboración propia.</figcaption>
+</figure>
+</section>
+
+<section style="padding: 48px 24px 8px">
+<div style="max-width: 1080px; margin: 0 auto">
+<h2 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 38px; font-weight: 700; line-height: 1.15">Las embarcaciones que recorren el río Meta</h2>
+</div>
+</section>
+
+<section style="padding: 24px 24px">
+<div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px">
+<figure style="margin: 0; min-width: 0">
+<img src="img/embarcaciones-1.jpg" alt="Infografía: canoa y chalana o bongo, con sus medidas y capacidad de carga" style="display: block; width: 100%; height: auto; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">Canoa y chalana o bongo.</figcaption>
+</figure>
+<figure style="margin: 0; min-width: 0">
+<img src="img/embarcaciones-2.jpg" alt="Infografía: botemotor y convoy, con sus medidas, tripulación y capacidad de carga" style="display: block; width: 100%; height: auto; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">Botemotor y convoy.</figcaption>
+</figure>
+</div>
+<p style="max-width: 1080px; margin: 12px auto 0; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">«Embarcaciones de carga en río Meta». Diseño: Miguel Ángel Acosta Sandino; medidas tomadas de SENA (2007) y de entrevistas a empresarios fluviales. En Ardila Luna (2018, pp. 33–34).</p>
+<div style="max-width: 680px; margin: 28px auto 0">
+<p style="margin: 0">En el Meta conviven embarcaciones de escalas muy distintas. Las canoas de madera, de tres a cuatro metros, sirven para la pesca y el transporte local. Las chalanas o bongos, de 15 a 50 metros, cargan entre 25 y 120 toneladas. Los botemotores y los convoyes, como los que usó NAVENAL, mueven cientos de toneladas <span style="color: #56635D; font-size: 0.92em">(Ardila Luna, 2018, pp. 33–34)</span>.</p>
+</div>
+</section>
+
+<section style="padding: 32px 24px">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 36px; align-items: center">
+<figure style="flex: 1 1 100%; max-width: 960px; min-width: 0; margin: 0 auto">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-bottom: 14px"><h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 30px; font-weight: 600">Vehículos automotores por departamento (1960)</h3></div>
+<img src="img/graficos/parque_automotor_1960.png" alt="Vehículos por departamento en 1960: Cundinamarca 60.229, Antioquia 22.644; Meta 1.429, el 0,8% del país" style="display: block; width: 100%; height: auto; background: #FFFFFF; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 10px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #56635D">Fuente: Gráfico de elaboración propia. Alvear Sanín (2008), Tabla 40, con base en el Anuario General de Estadística de 1960. Total nacional: 181.918 vehículos.</figcaption>
+</figure>
+<div style="flex: 1 1 100%; max-width: 680px; margin: 0 auto; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div><b style="display: block; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 34px; line-height: 1; color: #2B6970">0,8%</b><span style="font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">de los vehículos del país estaban en el Meta en 1960</span></div>
+<p style="margin: 0">Una década después de que NAVENAL llegara al Meta, el departamento tenía 1.429 vehículos, menos del 1% del país. En la mayor parte de la llanura no había carretera que usar. Donde la falta de vías reducía al mínimo la presencia del Estado <span style="color: #56635D; font-size: 0.92em">(Ospina Ovalle, 2021, p. 153)</span>, el comercio por el río era la forma normal de abastecerse.</p>
+<figure style="margin: 0">
+<img src="img/vapor-uribante.jpg" alt="Vapor de rueda Uribante navegando, en fotografía antigua de tono sepia" style="display: block; width: 100%; height: auto; border: 1px solid #C6CDC1">
+<figcaption style="margin-top: 8px; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; color: #56635D">Vapores del Meta (Ardila Luna, 2018, p. 107, Imagen 18).</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+
+
+
+</section>
+<section id="fuentes">
+
+
+<section style="padding: 64px 24px 16px">
+<div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0 0 8px; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 48px; font-weight: 700; line-height: 1.12">Fuentes y datos</h2>
+<h3 style="margin: 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 24px; font-weight: 600">Fuentes familiares</h3>
+<p style="margin: 0">Mi abuelo falleció en 2022, así que su experiencia se reconstruye de forma indirecta. La fuente principal es una entrevista a Flor Alba Garzón, su esposa (20 de septiembre de 2026). Los testimonios orales tienen límites claros para fechar y ubicar los hechos, por eso los uso sobre todo para describir las dinámicas del comercio, las temporadas de viaje, los clientes y las mercancías, y los contrasto con la literatura y los datos.</p>
+<h3 style="margin: 16px 0 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 24px; font-weight: 600">Datos usados en este borrador</h3>
+</div>
+</section>
+
+<section style="padding: 16px 24px">
+<div style="max-width: 1080px; margin: 0 auto; overflow-x: auto">
+<table style="width: 100%; min-width: 680px; border-collapse: collapse; font-size: 15px">
+<thead>
+<tr>
+<th style="padding: 9px 10px; text-align: left; border-bottom: 1px solid #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #56635D">Serie</th>
+<th style="padding: 9px 10px; text-align: left; border-bottom: 1px solid #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #56635D">Origen</th>
+<th style="padding: 9px 10px; text-align: left; border-bottom: 1px solid #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #56635D">Variables</th>
+<th style="padding: 9px 10px; text-align: left; border-bottom: 1px solid #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #56635D">Cobertura</th>
+<th style="padding: 9px 10px; text-align: left; border-bottom: 1px solid #C6CDC1; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #56635D">Tratamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1; font-weight: 600">Población del Meta y municipios</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Censos de Población 1938 (Tomo XVI), 1951 y 1964 (Resumen del Meta), Contraloría y DANE</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Población total, cabecera y resto; sexo; grupos de edad (1964)</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Intendencia/Departamento del Meta y sus municipios</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Transcripción propia de los cuadros escaneados; verificación de que los municipios sumen el total departamental; tasas de crecimiento geométrico entre fechas censales</td></tr>
+<tr><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1; font-weight: 600">Carreteras nacionales</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Alvear Sanín (2008), Tabla 35 (Barnhart)</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Kilómetros</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Nacional, 1932–1948, cada 4 años</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Transcripción</td></tr>
+<tr><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1; font-weight: 600">Carga por modo</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Alvear Sanín (2008), Tabla 38 (misión Currie)</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Ton-km y porcentaje</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Nacional, 1947</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Transcripción</td></tr>
+<tr><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1; font-weight: 600">Parque automotor</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Alvear Sanín (2008), Tabla 40 (Anuario General de Estadística)</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Vehículos</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Departamentos, 1960</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Transcripción</td></tr>
+<tr><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1; font-weight: 600">Mapa</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Ardila Luna (2018), Mapa No. 2; entrevista familiar</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Ríos, puertos, carreteras y paradas</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Cuenca del Meta</td><td style="padding: 9px 10px; vertical-align: top; border-bottom: 1px solid #C6CDC1">Capa interactiva de elaboración propia sobre el mapa base</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section style="padding: 24px 24px 48px">
+<div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; color: #56635D; font-size: 16px">Los gráficos están hechos en Stata a partir de los archivos de la carpeta <span style="font-family: 'Courier Prime', 'Courier New', monospace">datos/</span> del sitio.</p>
+<h3 style="margin: 24px 0 0; font-family: 'Cutive Mono', 'Courier New', monospace; font-size: 24px; font-weight: 600">Bibliografía</h3>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 16px">
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Alcaldía de Puerto López. (2025). <i>Pasado, presente y futuro</i>. https://www.puertolopez-meta.gov.co/publicaciones/2275/pasado-presente-y-futuro/</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Alvear Sanín, J. (2008). <i>Historia del transporte y la infraestructura en Colombia (1492–2007)</i>. Ministerio de Transporte.</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Ardila Luna, D. C. (2016). El río Meta y los proyectos para la integración de los Llanos Orientales colombianos, desde la Colonia hasta el siglo XXI. <i>Anuario de Historia Regional y de las Fronteras, 21</i>(2).</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Ardila Luna, D. C. (2018). <i>«El proyecto lo trajeron hecho». El proyecto de navegabilidad del río Meta en la vida con el río</i> [Tesis doctoral, Universidad de los Andes].</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Ardila-Luna, D. C. (2022). El río Meta en el proceso de fronterización de la frontera colombiana, 1532–2016. <i>Agua y Territorio</i>, (19), 67–80.</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Contraloría General de la República. (1942). <i>Censo General de Población, 5 de julio de 1938. Tomo XVI: Resumen general del país</i>. Imprenta Nacional.</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">DANE. (1954). <i>Censo de Población, 9 de mayo de 1951</i>.</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">DANE. (1970). <i>XIII Censo Nacional de Población y II de Edificios y Viviendas, 15 de julio de 1964. Resumen del Meta</i>. Imprenta Nacional.</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Mazzuca, S. y Robinson, J. A. (2006). <i>Political conflict and power-sharing in the origins of modern Colombia</i> (NBER Working Paper No. 12099).</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Ospina Ovalle, C. A. (2021). <i>Incendio en la llanura: surgimiento, auge y entrega de las guerrillas en los Llanos Orientales 1949–1953</i>. Escuela Superior de Guerra; Planeta.</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Quintero González, J. R., Ramírez Sosa, Y. A. y Cortázar Ávila, A. M. (2020). Transporte fluvial en Colombia. <i>Revista Ciudades, Estados y Política, 7</i>(1), 49–68.</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Safford, F. y Palacios, M. (2002). <i>Colombia: Fragmented land, divided society</i>. Oxford University Press.</p>
+<p style="margin: 0; padding-left: 2em; text-indent: -2em">Serje, M. y Ardila Luna, D. C. (s. f.). El río como infraestructura: paisaje y navegación en el río Meta, Colombia.</p>
+</div>
+</div>
+</section>
+
+
+
 </section>
 </main>
-
-<footer class="end wrap"><div class="col">Trabajo individual de historia familiar · Historia Económica de Colombia · 2026-2. Borrador para la coevaluación del 27 de octubre.</div></footer>
-
-<style>.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)} #abel{margin-bottom:.4em}
-.mapa-base{position:relative; line-height:0}
-.mapa-base img{display:block; width:100%; height:auto}
-.hs{position:absolute; width:18px; height:18px; margin:-9px 0 0 -9px; border-radius:50%; padding:0; cursor:pointer; background:transparent; border:2.5px solid #1B2623; box-shadow:0 0 0 2px rgba(255,255,255,.85); transition:transform .15s}
-.hs-parada,.hs-base{border-color:#A26B1C; background:rgba(162,107,28,.28)}
-.hs-base{width:22px; height:22px; margin:-11px 0 0 -11px}
-.hs-mercado{border-color:#1B2623; background:rgba(27,38,35,.18)}
-.hs-puerto{border-color:#2B6970; background:rgba(43,105,112,.12)}
-.hs:hover,.hs:focus-visible,.hs.on{background:rgba(162,107,28,.65); transform:scale(1.15)}
-.hs-puerto:hover,.hs-puerto.on,.hs-puerto:focus-visible,.hs-mercado:hover,.hs-mercado.on,.hs-mercado:focus-visible{background:rgba(43,105,112,.55)}
-@media (prefers-reduced-motion: reduce){.hs{transition:none}}
-@media (max-width:600px){.hs{width:16px;height:16px;margin:-8px 0 0 -8px;border-width:2px}.hs-base{width:20px;height:20px;margin:-10px 0 0 -10px}}
-.legend i.l-puerto{border-color:#2B6970}
-.rplot{display:block; width:100%; height:auto; background:#fff; border:1px solid var(--line)}
-.band{margin:8px 0 0}
-.band img{display:block; width:100%; max-height:560px; object-fit:cover}
-.band figcaption{padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px)); max-width:1080px; margin-inline:auto}
-.side-photo{margin:4px 0}
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 (function(){
-  // ---- mapa interactivo
-  var info = document.getElementById('mapa-texto');
+  var nombre = document.getElementById('mapa-nombre');
+  var nota = document.getElementById('mapa-nota');
   var pts = document.querySelectorAll('.hs');
-  function show(g){
-    pts.forEach(function(p){p.classList.remove('on')});
-    g.classList.add('on');
-    info.innerHTML = '';
-    var b = document.createElement('b'); b.textContent = g.dataset.name;
-    info.appendChild(b); info.appendChild(document.createElement('br'));
-    info.appendChild(document.createTextNode(g.dataset.note));
+  function show(b){
+    pts.forEach(function(p){ p.classList.remove('on'); });
+    b.classList.add('on');
+    nombre.textContent = b.getAttribute('data-name');
+    nota.textContent = b.getAttribute('data-note');
   }
-  pts.forEach(function(g){
-    g.addEventListener('click', function(){show(g)});
-    g.addEventListener('mouseenter', function(){show(g)});
-    g.addEventListener('focus', function(){show(g)});
+  pts.forEach(function(b){
+    b.addEventListener('click', function(){ show(b); });
+    b.addEventListener('mouseenter', function(){ show(b); });
+    b.addEventListener('focus', function(){ show(b); });
   });
-  var pl = document.querySelector('.hs-base'); if(pl) pl.classList.add('on');
-
-  // ---- gráficos
-  if(!window.Chart) return;
-  var charts = [];
-  function tok(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
-  var fmt = new Intl.NumberFormat('es-CO');
-
-  function build(){
-    charts.forEach(function(c){c.destroy()}); charts = [];
-    var ink=tok('--ink'), muted=tok('--muted'), line=tok('--line'), water=tok('--water'), silt=tok('--silt'), grass=tok('--grass'), paper=tok('--paper');
-    Chart.defaults.font.family = '"IBM Plex Mono", ui-monospace, monospace';
-    Chart.defaults.font.size = 11;
-    Chart.defaults.color = muted;
-    Chart.defaults.borderColor = line;
-    Chart.defaults.maintainAspectRatio = false;
-    Chart.defaults.plugins.legend.labels.boxWidth = 12;
-    Chart.defaults.plugins.tooltip.callbacks.label = undefined;
-
-    var grid = {color: line, drawTicks:false};
-    var yearAxis = function(min,max){ return {type:'linear', min:min, max:max, grid:{display:false}, ticks:{callback:function(v){return String(v)}, stepSize:4}}; };
-
-    // línea vertical 1936
-    var vline = {id:'vline', afterDatasetsDraw:function(c, a, o){ if(!o || !o.x) return; var xs=c.scales.x, ys=c.scales.y, x=xs.getPixelForValue(o.x), ctx=c.ctx; ctx.save(); ctx.strokeStyle=silt; ctx.setLineDash([4,4]); ctx.beginPath(); ctx.moveTo(x, ys.top); ctx.lineTo(x, ys.bottom); ctx.stroke(); ctx.setLineDash([]); ctx.fillStyle=silt; ctx.font='11px "IBM Plex Mono", monospace'; ctx.fillText(o.label, x+6, ys.top+12); ctx.restore(); }};
-
-    charts.push(new Chart(document.getElementById('c-carreteras'), {
-      type:'line', plugins:[vline],
-      data:{datasets:[{data:[{x:1932,y:3006},{x:1936,y:3998},{x:1940,y:6598},{x:1944,y:9830},{x:1948,y:11607}], borderColor:ink, backgroundColor:ink, pointRadius:4, borderWidth:2, tension:0}]},
-      options:{plugins:{legend:{display:false}, vline:{x:1936, label:'Bogotá–Villavicencio'}, tooltip:{callbacks:{title:function(i){return String(i[0].parsed.x)}, label:function(i){return fmt.format(i.parsed.y)+' km'}}}},
-        scales:{x:yearAxis(1931,1949), y:{beginAtZero:true, grid:grid, ticks:{callback:function(v){return fmt.format(v)}}}}}
-    }));
-
-    charts.push(new Chart(document.getElementById('c-modos'), {
-      type:'bar',
-      data:{labels:['Carreteras','Ferrocarriles','Vías fluviales','Aerolíneas'], datasets:[{data:[35.8,32.5,28.5,3.2], backgroundColor:[muted,muted,water,muted], borderRadius:0, barPercentage:.7}]},
-      options:{indexAxis:'y', plugins:{legend:{display:false}, tooltip:{callbacks:{label:function(i){return String(i.parsed.x).replace('.',',')+'% de las ton-km'}}}},
-        scales:{x:{beginAtZero:true, max:40, grid:grid, ticks:{callback:function(v){return v+'%'}}}, y:{grid:{display:false}, ticks:{color:ink}}}}
-    }));
-
-    charts.push(new Chart(document.getElementById('c-magdalena'), {
-      type:'line',
-      data:{datasets:[{data:[{x:1915,y:162000},{x:1928,y:961000},{x:1930,y:451000},{x:1932,y:282000},{x:1936,y:782000},{x:1950,y:1571086},{x:1956,y:2069000}], borderColor:water, backgroundColor:water, pointRadius:4, borderWidth:2, borderDash:[5,4], tension:0}]},
-      options:{plugins:{legend:{display:false}, tooltip:{callbacks:{title:function(i){return String(i[0].parsed.x)}, label:function(i){return fmt.format(i.parsed.y)+' toneladas'}}}},
-        scales:{x:{type:'linear', min:1913, max:1958, grid:{display:false}, ticks:{callback:function(v){return String(v)}, stepSize:5}}, y:{beginAtZero:true, grid:grid, ticks:{callback:function(v){return (v/1e6).toLocaleString('es-CO')+' M'}}}}}
-    }));
-
-    charts.push(new Chart(document.getElementById('c-poblacion'), {
-      type:'bar',
-      data:{labels:['1938','1951','1964'], datasets:[
-        {label:'Meta', data:[51674,67492,165530], backgroundColor:ink},
-        {label:'Villavicencio', data:[24315,33342,58430], backgroundColor:muted},
-        {label:'Puerto López', data:[null,null,18054], backgroundColor:water}
-      ]},
-      options:{plugins:{tooltip:{callbacks:{label:function(i){return i.dataset.label+': '+(i.parsed.y==null?'no era municipio':fmt.format(i.parsed.y))}}}},
-        scales:{x:{grid:{display:false}, ticks:{color:ink}}, y:{beginAtZero:true, grid:grid, ticks:{callback:function(v){return fmt.format(v)}}}}}
-    }));
-
-    var mun = [['Villavicencio',45277,13153],['Puerto López',3586,14468],['Acacías',6508,10104],['San Martín',6789,6981],['Granada',5683,4556],['Fuente de Oro',1109,7090],['Guamal',2113,5841],['Cumaral',1773,5501],['Restrepo',2603,4298],['El Calvario',195,4628],['Castilla la Nueva',417,3569],['San Luis de Cubarral',821,2800],['San Carlos de Guaroa',681,2291],['Cabuyaro',273,2422]];
-    charts.push(new Chart(document.getElementById('c-municipios'), {
-      type:'bar',
-      data:{labels:mun.map(function(m){return m[0]}), datasets:[
-        {label:'Cabecera', data:mun.map(function(m){return m[1]}), backgroundColor:mun.map(function(m){return m[0]==='Puerto López'?water:ink})},
-        {label:'Resto del municipio', data:mun.map(function(m){return m[2]}), backgroundColor:mun.map(function(m){return m[0]==='Puerto López'?silt:muted})}
-      ]},
-      options:{indexAxis:'y', plugins:{legend:{position:'bottom'}, tooltip:{callbacks:{label:function(i){return i.dataset.label+': '+fmt.format(i.parsed.x)}}}},
-        scales:{x:{stacked:true, grid:grid, ticks:{callback:function(v){return fmt.format(v)}}}, y:{stacked:true, grid:{display:false}, ticks:{color:ink, autoSkip:false}}}}
-    }));
-
-    var ages=['<1','1-4','5-9','10-14','15-19','20-24','25-29','30-34','35-39','40-44','45-49','50-54','55-59','60-64','65-69','70-74','75-79','80-84','85+'];
-    var h=[286,1503,1493,1020,912,930,840,773,653,516,383,277,129,125,44,36,14,16,3];
-    var m=[326,1318,1421,915,694,699,741,572,428,328,263,150,74,89,34,14,12,18,5];
-    charts.push(new Chart(document.getElementById('c-piramide'), {
-      type:'bar',
-      data:{labels:ages.slice().reverse(), datasets:[
-        {label:'Hombres', data:h.slice().reverse().map(function(v){return -v}), backgroundColor:water, barPercentage:1, categoryPercentage:.9},
-        {label:'Mujeres', data:m.slice().reverse(), backgroundColor:silt, barPercentage:1, categoryPercentage:.9}
-      ]},
-      options:{indexAxis:'y', plugins:{legend:{position:'bottom'}, tooltip:{callbacks:{label:function(i){return i.dataset.label+': '+fmt.format(Math.abs(i.parsed.x))}}}},
-        scales:{x:{stacked:true, min:-1600, max:1600, grid:grid, ticks:{callback:function(v){return fmt.format(Math.abs(v))}}}, y:{stacked:true, grid:{display:false}, ticks:{autoSkip:false}}}}
-    }));
-
-    var dep=[['Cundinamarca',60229],['Antioquia',22644],['Valle del Cauca',21789],['Caldas',14140],['Atlántico',11863],['Santander',9217],['Bolívar',7224],['Tolima',6794],['Norte de Santander',5738],['Boyacá',5318],['Magdalena',3800],['Nariño',3050],['Huila',2940],['Cauca',2371],['Meta',1429],['Chocó',138]];
-    charts.push(new Chart(document.getElementById('c-automotor'), {
-      type:'bar',
-      data:{labels:dep.map(function(d){return d[0]}), datasets:[{data:dep.map(function(d){return d[1]}), backgroundColor:dep.map(function(d){return d[0]==='Meta'?silt:muted}), barPercentage:.8}]},
-      options:{indexAxis:'y', plugins:{legend:{display:false}, tooltip:{callbacks:{label:function(i){return fmt.format(i.parsed.x)+' vehículos'}}}},
-        scales:{x:{grid:grid, ticks:{callback:function(v){return fmt.format(v)}}}, y:{grid:{display:false}, ticks:{autoSkip:false, color:function(c){return c.tick && c.tick.label==='Meta'?silt:ink}}}}}
-    }));
-  }
-  build();
-  try{
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', build);
-    new MutationObserver(build).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
-  }catch(e){}
+  var base = document.querySelector('.hs-base'); if (base) base.classList.add('on');
 })();
 </script>
-
 </body>
 </html>
